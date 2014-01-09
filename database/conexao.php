@@ -3,7 +3,7 @@
 	// Define as variáveis de conexão com o servidor e o banco de dados
 	define("SERVER","localhost"); 
 	define("USER", "root");
-	define("PASSWORD", "");
+	define("PASSWORD", "anakin88");
 	define("DB", "albatroz_sis");
 
 	/*
