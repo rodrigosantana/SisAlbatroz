@@ -31,9 +31,9 @@ mysql_query("set names 'utf8', $link");
 mysql_query("INSERT INTO geral (cod_obser, cod_embar, cod_mestr, cod_empre, data_saida, data_chegada, financiador, obs)
 	VALUES ('$cod_obser', '$cod_embar', '$cod_mestr', '$cod_empre', '$data_saida', '$data_chegada', '$financiador','$obs')", $link);
 
-$result = mysql_query($query, $link);
-
 //fechando a conexão com o banco de dados
 mysql_close($link);
+
+header("location:embarque.php");
 
 ?>
