@@ -6,7 +6,7 @@
  	// Define as variáveis de conexão com o BD e faz a conexão
 	define("SERVER","localhost"); 
 	define("USER", "root");
-	define("PASSWORD", "");
+	define("PASSWORD", "anakin88");
 	define("DB", "albatroz_login");
 
 /*
