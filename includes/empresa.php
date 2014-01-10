@@ -36,14 +36,21 @@
                 	<LABEL>
 						<SPAN> Nome: </SPAN>
 						<INPUT type="text" class="input_text" name="nome" id='nome' />
-						<p class='hint'> Insira o orgão financiador desta viagem </p>
+					</LABEL>
+					<LABEL> 
+						<SPAN> CNPJ: </SPAN>
+						<INPUT class="input_text" type="number" name="cnpj" />
 					</LABEL>
 				</DIV>
 
 				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL> 
-						<SPAN> CNPJ: </SPAN>
-						<INPUT class="input_text" type="text" name="cnpj" />
+						<SPAN> Nome do contato: </SPAN>
+						<INPUT class="input_text" type="text" name="contato" />
+					</LABEL>
+					<LABEL> 
+						<SPAN> Tel. do contato: </SPAN>
+						<INPUT class="input_text" type="tel" name="tel" />
 					</LABEL>
 				</DIV>
 

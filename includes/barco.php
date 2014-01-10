@@ -40,18 +40,18 @@
 					</LABEL>
 	                
 					<LABEL> 
-						<SPAN> Registro: </SPAN>
-						<INPUT class="input_text" type="text" name="reg" />
+						<SPAN> Nº do registro MPA: </SPAN>
+						<INPUT class="input_text" type="number" name="reg" />
 					</LABEL>
 
 					<LABEL> 
 						<SPAN> Ano de fabricação: </SPAN>
-						<INPUT class="input_text" type="text" name="fab" />
+						<INPUT class="input_text" type="number" name="fab" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Comprimento (metros): </SPAN>
-						<INPUT class="input_text" type="text" name="comp" />
+						<SPAN> Comprimento (m): </SPAN>
+						<INPUT class="input_text" type="number" name="comp" />
 					</LABEL>
 
 					<LABEL> 
@@ -68,18 +68,18 @@
 
 				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL> 
-						<SPAN> Porão (ton): </SPAN>
-						<INPUT type="text" class="input_text" name="capac" id='capac' />
+						<SPAN> Capa. porão (t): </SPAN>
+						<INPUT type="number" class="input_text" name="capac" id='capac' />
 					</LABEL>
 					
 					<LABEL> 
-						<SPAN> Arqueação Bruta (ton): </SPAN>
-						<INPUT type="text" class="input_text" name="arq_bruta" id='ar_bruta' />
+						<SPAN> Arqueação bruta (t): </SPAN>
+						<INPUT type="number" class="input_text" name="arq_bruta" id='ar_bruta' />
 						<p class='hint'> Insira o orgão financiador desta viagem </p>
 					</LABEL>
 					
 					<LABEL> 
-						<SPAN> Conservação: </SPAN>
+						<SPAN> Tipo de conservação: </SPAN>
 						<select name="conserv" class="input_text">
 							<option value="">---Selecione---</option>
 							<option value="camera_fria">Câmera fria</option>
@@ -92,7 +92,7 @@
 
 					<LABEL> 
 						<SPAN> Tripulação: </SPAN>
-						<INPUT type="text" class="input_text" name="tripu" id='tripu' />
+						<INPUT type="number" class="input_text" name="tripu" id='tripu' />
 					</LABEL>
 				</DIV>
 

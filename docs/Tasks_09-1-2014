@@ -1,23 +1,23 @@
-Evolucao SisAlbatroz - 09 de janeiro de 2014
+﻿Evolucao SisAlbatroz - 09 de janeiro de 2014
 
 --- Cadastro de Basilares
 
 -- Observadores de Bordo
-1) Adicionar campo skype;
+1) Adicionar campo skype; OK
 2) Adicionar upload de foto do observador;
 
 -- Especies
 1) Inserir combobox alternativo para Subcategoria em funcao de Categoria;
 
 -- Embarcacoes
-1) Alterar Registro para Número de Registro MPA;
-2) Alterar Porao (ton) para Cap. Porão (t);
-3) Alterar Arqueacao Bruta (ton) para Arqueacao Bruta (t);
-4) Alterar Conservacao para Tipo de Conservacao;
-5) Alterar HTML para number;
+1) Alterar Registro para Número de Registro MPA; OK
+2) Alterar Porao (ton) para Cap. Porão (t); OK
+3) Alterar Arqueacao Bruta (ton) para Arqueacao Bruta (t); OK
+4) Alterar Conservacao para Tipo de Conservacao; OK
+5) Alterar HTML para number; OK
 
 -- Empresas
-1) Inserir nome e telefone de um contato.
+1) Inserir nome e telefone de um contato; OK
 
 --- Embarques
 
@@ -31,8 +31,8 @@ Evolucao SisAlbatroz - 09 de janeiro de 2014
    Retorna uma tabela com as informações acima, com botao selecionar cruzeiro para entrada de dados abioticos,
    no topo da tela deve aparecer uma mensagem com o nome da embarcacao e id do cruzeiro ao qual esta sendo realizada a insercao de dados.
 2) Remover do formulario o box de embarcacao;
-3) HTML de Latitude, Longitude, Temperatura do ar e do mar, profundidade, pressao, velocidade do vento para number;
-4) inserir unidades fixas em todos os nomes dos campos;
+3) HTML de Latitude, Longitude, Temperatura do ar e do mar, profundidade, pressao, velocidade do vento para number; OK
+4) inserir unidades fixas em todos os nomes dos campos; OK 
 
 IMPORTANTE: saida para o problema de insercoes multiplas para o banco... fazer com que cada lance seja salvo em uma linha de uma tabela antes de ir 
 para o banco, ao final de todos os lances inseridos, enviar para o banco todo o array, tratar esse array no recebe_formulario.php.
@@ -65,4 +65,6 @@ para o banco, ao final de todos os lances inseridos, enviar para o banco todo o 
 1) Remover campos: Embarcacao, cruzeiro, observacao e observacao predacao
 2) Inserir consulta igual dados abioticos, contagem-por-do-sol e contagem aves boia radio
 3) Forms dinamico
+
+
 

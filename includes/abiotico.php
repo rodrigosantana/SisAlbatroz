@@ -73,7 +73,7 @@
 				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL> 
 						<SPAN> Anzóis: </SPAN>
-						<INPUT type="text" class="input_text" name="anzol" />
+						<INPUT type="number" class="input_text" name="anzol" />
 					</LABEL>
 					
 					<LABEL>
@@ -104,13 +104,13 @@
 				<DIV class="esquerda">
 				<H3> Início </H3>
 					<LABEL> 
-						<SPAN> Latitude: </SPAN>
-						<INPUT type="text" class="input_text" name="lat_in_lan" />
+						<SPAN> Latitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="lat_in_lan" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long_in_lan" />
+						<SPAN> Longitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="long_in_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -124,8 +124,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Profundidade: </SPAN>
-						<INPUT type="number	" class="input_text" name="prof_in_lan" />
+						<SPAN> Profundidade (m): </SPAN>
+						<INPUT type="number" class="input_text" name="prof_in_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -175,8 +175,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Velocidade do vento: </SPAN>
-						<INPUT type="text" class="input_text" name="vvento_in_lan" />
+						<SPAN> Velocidade do vento (nós): </SPAN>
+						<INPUT type="number" class="input_text" name="vvento_in_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -199,13 +199,13 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. do ar: </SPAN>
-						<INPUT type="text" class="input_text" name="tar_in_lan" />
+						<SPAN> Temp. do ar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tar_in_lan" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. sup. mar: </SPAN>
-						<INPUT type="text" class="input_text" name="tsmar_in_lan" />
+						<SPAN> Temp. sup. mar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tsmar_in_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -225,20 +225,20 @@
 
 					<LABEL> 
 						<SPAN> Pressão atm: </SPAN>
-						<INPUT type="text" class="input_text" name="atm_in_lan" />
+						<INPUT type="number" class="input_text" name="atm_in_lan" />
 					</LABEL>
 				</DIV>
 
 				<DIV class="direita">
 				<H3> Fim </H3>
 					<LABEL> 
-						<SPAN> Latitude: </SPAN>
-						<INPUT type="text" class="input_text" name="lat_fi_lan" />
+						<SPAN> Latitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="lat_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long_fi_lan" />
+						<SPAN> Longitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="long_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -253,7 +253,7 @@
 
 					<LABEL> 
 						<SPAN> Profundidade: </SPAN>
-						<INPUT type="number	" class="input_text" name="prof_fi_lan" />
+						<INPUT type="number" class="input_text" name="prof_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -303,8 +303,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Velocidade do vento: </SPAN>
-						<INPUT type="text" class="input_text" name="vvento_fi_lan" />
+						<SPAN> Velocidade do vento (nós): </SPAN>
+						<INPUT type="number" class="input_text" name="vvento_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -327,13 +327,13 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. ar: </SPAN>
-						<INPUT type="text" class="input_text" name="tar_fi_lan" />
+						<SPAN> Temp. ar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tar_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. sup. mar: </SPAN>
-						<INPUT type="text" class="input_text" name="tsmar_fi_lan" />
+						<SPAN> Temp. sup. mar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tsmar_fi_lan" />
 					</LABEL>
 
 					<LABEL> 
@@ -353,7 +353,7 @@
 
 					<LABEL> 
 						<SPAN> Pressão atm: </SPAN>
-						<INPUT type="text" class="input_text" name="atm_fi_lan" />
+						<INPUT type="number" class="input_text" name="atm_fi_lan" />
 					</LABEL>
 				</DIV>
 
@@ -361,13 +361,13 @@
 				<DIV class="esquerda">
 				<H3> Início </H3>
 					<LABEL> 
-						<SPAN> Latitude: </SPAN>
-						<INPUT type="text" class="input_text" name="lat_in_rec" />
+						<SPAN> Latitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="lat_in_rec" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long_in_rec" />
+						<SPAN> Longitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="long_in_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -381,8 +381,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Profunidade: </SPAN>
-						<INPUT type="number	" class="input_text" name="prof_in_rec" />
+						<SPAN> Profunidade (m): </SPAN>
+						<INPUT type="number" class="input_text" name="prof_in_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -432,8 +432,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Velocidade do vento: </SPAN>
-						<INPUT type="text" class="input_text" name="vvento_in_rec" />
+						<SPAN> Velocidade do vento (nós): </SPAN>
+						<INPUT type="number" class="input_text" name="vvento_in_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -456,13 +456,13 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. ar: </SPAN>
-						<INPUT type="text" class="input_text" name="tar_in_rec" />
+						<SPAN> Temp. ar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tar_in_rec" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. sup. mar: </SPAN>
-						<INPUT type="text" class="input_text" name="tsmar_in_rec" />
+						<SPAN> Temp. sup. mar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tsmar_in_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -482,20 +482,20 @@
 
 					<LABEL> 
 						<SPAN> Pressão atm: </SPAN>
-						<INPUT type="text" class="input_text" name="atm_in_rec" />
+						<INPUT type="number" class="input_text" name="atm_in_rec" />
 					</LABEL>
 				</DIV>
 
 				<DIV class="esquerda">
 				<H3> Fim </H3>
 					<LABEL> 
-						<SPAN> Latitude: </SPAN>
-						<INPUT type="text" class="input_text" name="lat_fi_rec" />
+						<SPAN> Latitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="lat_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long_fi_rec" />
+						<SPAN> Longitude (decimal): </SPAN>
+						<INPUT type="number" class="input_text" name="long_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -509,8 +509,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Profundidade: </SPAN>
-						<INPUT type="number	" class="input_text" name="prof_fi_rec" />
+						<SPAN> Profundidade (m): </SPAN>
+						<INPUT type="number" class="input_text" name="prof_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -560,8 +560,8 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Velocidade vento: </SPAN>
-						<INPUT type="text" class="input_text" name="vvento_fi_rec" />
+						<SPAN> Velocidade vento (nós): </SPAN>
+						<INPUT type="number" class="input_text" name="vvento_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -584,13 +584,13 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. ar: </SPAN>
-						<INPUT type="text" class="input_text" name="tar_fi_rec" />
+						<SPAN> Temp. ar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tar_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Temp. sup. mar: </SPAN>
-						<INPUT type="text" class="input_text" name="tsmar_fi_rec" />
+						<SPAN> Temp. sup. mar (°C): </SPAN>
+						<INPUT type="number" class="input_text" name="tsmar_fi_rec" />
 					</LABEL>
 
 					<LABEL> 
@@ -610,7 +610,7 @@
 
 					<LABEL> 
 						<SPAN> Pressão atm: </SPAN>
-						<INPUT type="text" class="input_text" name="atm_fi_rec" />
+						<INPUT type="number" class="input_text" name="atm_fi_rec" />
 					</LABEL>
 				</DIV>
 
