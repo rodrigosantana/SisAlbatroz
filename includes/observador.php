@@ -15,7 +15,7 @@
 <!DOCTYPE html PUBLIC> <!-- Define o tipo de arquivo que vai ser, necessário para que a página seje interpretada corretamente !-->
 <HTML lang="pt-br"> <!--  Abre o arquivo do tipo HTML e defini a linguagem como portugues do Brasil !-->
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
-	<META http-equiv="Content-Type" content="text/html; charset=UTF-8" enctype="multipart/form-data"> <!-- Informações sobre o tipo de texto da página !-->
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8" > <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE> Observador </TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
@@ -29,7 +29,7 @@
  	
  	<BODY>
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
-            <FORM id="form" method="post" action="recebe_observador.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
+            <FORM id="form" method="post" action="recebe_observador.php" enctype="multipart/form-data"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> CADASTRO DE OBSERVADOR DE BORDO </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 
                 <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->

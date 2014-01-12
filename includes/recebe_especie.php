@@ -12,15 +12,15 @@
 require_once('../database/conexao.php');
 
 //Definindo as variáveis de conexão com o servidor e BD
-$cat = $_POST["cat"];
-$subcat = $_POST["subcat"];
+$categ = $_POST["categ"];
+$subcateg = $_POST["subcateg"];
 $pop = $_POST["pop"];
 $poping = $_POST["poping"];
 $cient = $_POST["cient"]; 
 
 // Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
 mysql_query("INSERT INTO especies (categoria, sub_categoria, nome_popular, nome_pop_ingles, nome_cient)
-	VALUES ('$cat', '$subcat', '$pop', '$poping', '$cient')", $link);
+	VALUES ('$categ', '$subcateg', '$pop', '$poping', '$cient')", $link);
 
 //fechando a conexão com o banco de dados
 mysql_close($link);

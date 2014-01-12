@@ -17,8 +17,18 @@
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Cadastro de Espécies</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
-	<script src="jquery-1.10.2.min.js" type="text/javascript" ></script>
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#categ').change(function(){
+                    console.log($(this));
+                    $.get( "especie_combo.php" , { option : $(this).val() } , function ( data ) {
+                        $ ( '#subcateg' ) . html ( data ) ;
+                    } ) ;
+                });
+            });
+    	</script>
 	</HEAD>
 
  	<HEADER align="middle">
@@ -35,19 +45,17 @@
                 <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
                 	<LABEL> 
 						<SPAN> Categoria: </SPAN>
-						<select name="cat" class="input_text">
+						<select name="categ" id="categ" class="input_text">
 							<option value="">---Selecione---</option>
-							<option value="aves">Aves</option>
-							<option value="peixes">Peixes</option>
+							<option value="Aves">Aves</option>
+							<option value="Peixes">Peixes</option>
 						</select>
 					</LABEL>
 
 					<LABEL> 
 						<SPAN> Sub-categoria: </SPAN>
-						<select name="subcat" class="input_text">
+						<select name="subcateg" id="subcateg"class="input_text">
 							<option value="">---Selecione---</option>
-							<option value="carti">Cartilaginoso</option>
-							<option value="osseo">Ósseo</option>
 						</select>
 					</LABEL>		
 	                
