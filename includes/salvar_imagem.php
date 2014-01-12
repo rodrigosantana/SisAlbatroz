@@ -1,5 +1,10 @@
 <?php
+
+date_default_timezone_set('America/Sao_Paulo'); // determina o fuso a ser utilizado em funções que utilizam a hora
+
 function recebeImagem($return = "name"){
+
+	//define("DIR", "../arquivos"); // tentativa de fazer a foto ser salva um nível abaixo. Não funciona.
 	
 	$dir = dirname(__FILE__)."/arquivos/";
 	//mkdir()
@@ -23,8 +28,8 @@ function recebeImagem($return = "name"){
 					break;
 			}
 			list($larguraAntiga,$alturaAntiga) = getimagesize($tmp_name);
-			$larguraNova = $larguraAntiga * 0.1;
-			$alturaNova = $alturaAntiga * 0.1;
+			$larguraNova = $larguraAntiga * 1.0;
+			$alturaNova = $alturaAntiga * 1.0;
 			
 			$dimensoes = getimagesize($tmp_name);
 			$larguraAntiga = $dimensoes[0];
@@ -51,7 +56,7 @@ function recebeImagem($return = "name"){
 			ob_end_clean();
 			
 			$ext = pathinfo($name, PATHINFO_EXTENSION);
-			$novoNome = date("H-i-s").".".$ext;
+			$novoNome = 'foto'.".".date("d-m-y_H-i-s").".".$ext;
 			$nomeCompleto = $dir.$novoNome;
 			$handle = fopen($nomeCompleto,"w");
 			fwrite($handle, $conteudo);
