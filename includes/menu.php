@@ -13,16 +13,16 @@
 			 <LI class="active"><a href="home.php">Home</a></LI>
 			 <LI><a href="#">Cadastro de Basilares</a>
 			  <ul>
-			   <LI><a href="observador.php">Observador</a></LI>
+			   <LI><a href="observador.php">Observadores</a></LI>
 			   <LI><a href="especie.php">Espécies</a></LI>
-			   <LI><a href="barco.php">Embarcação</a></LI>
+			   <LI><a href="barco.php">Embarcações</a></LI>
 			   <LI><a href="empresa.php">Empresas</a></LI>
 			   <LI><a href="mestre.php">Mestres</a></LI>
 			  </UL>
 			 </LI>
 			 <LI><a href="#">Embarques</a>
 			  <UL>
-			   <LI><a href="embarque.php">Cadastro de Cruzeiro</a></LI>
+			   <LI><a href="embarque.php">Cadastro de Cruzeiros</a></LI>
 			   <LI><a href="abiotico.php">Dados Abióticos</a></LI>
 			   <LI><a href="pordosol.php">Contagem por-do-sol</a></LI>
 			   <LI><a href="capt_inci.php">Captura Incidental</a></LI>

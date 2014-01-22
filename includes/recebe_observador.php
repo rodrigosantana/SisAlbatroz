@@ -11,6 +11,7 @@
 
 //Abrindo conexão com o servidor e BD
 require_once('../database/conexao.php');
+require_once "salvar_imagem.php";
 
 //Definindo as variáveis de conexão com o servidor e BD
 $nome = $_POST["nome"];
@@ -19,10 +20,16 @@ $rg = $_POST["rg"];
 $tel = $_POST["tel"]; 
 $email = $_POST["email"];
 $ender = $_POST["ender"];
+$skype = $_POST["skype"];
+$imagem = recebeImagem();
+
+//var_dump(mysql_error());
+//exit();
+
 
 // Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
-mysql_query("INSERT INTO observador (nome, cpf, rg, tel, email, endereco)
-	VALUES ('$nome', '$cpf', '$rg', '$tel', '$email', '$ender')", $link);
+mysql_query("INSERT INTO observador (nome, cpf, rg, tel, email, skype, endereco, foto)
+	VALUES ('$nome', '$cpf', '$rg', '$tel', '$email', '$skype', '$ender', '$imagem')", $link);
 
 //fechando a conexão com o banco de dados
 mysql_close($link);

@@ -17,8 +17,36 @@
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Contagem por-do-sol</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
-	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<script type="text/javascript">
+		var qtdeCampos = 0;
+
+		function addCampos() {
+		var objPai = document.getElementById("campoPai");
+		//Criando o elemento DIV;
+		var objFilho = document.createElement("label");
+		//Definindo atributos ao objFilho:
+		objFilho.setAttribute("id","filho"+qtdeCampos);
+
+		//Inserindo o elemento no pai:
+		objPai.appendChild(objFilho);
+		//Escrevendo algo no filho recém-criado:
+		document.getElementById("filho"+qtdeCampos).innerHTML =
+			"<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies ORDER BY nome_popular");
+			  dinCombo('comboBarco', $rs, 'id', 'nome_popular');?>\
+			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='esp_cont[]'> \
+			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'>";
+		qtdeCampos++;
+		}
+
+		function removerCampo(id) {
+		var objPai = document.getElementById("campoPai");
+		var objFilho = document.getElementById("filho"+id);
+
+		//Removendo o DIV com id específico do nó-pai:
+		var removido = objPai.removeChild(objFilho);
+		}
+	</script>
 	</HEAD>
 
  	<HEADER align="middle">
@@ -31,28 +59,10 @@
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
             <FORM id="form" method="post" action="recebe_pordosol.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> Contagem por-do-sol </H1> <!-- Cabeçalho da caixa principal do formulário !-->
-                
-                <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
-                	<LABEL> 
-						<SPAN> Embarcação: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome FROM embarcacao ORDER BY nome");
-						    //chama a função
-						    montaCombo('comboBarco', $rs, 'id', 'nome');
-						?>
-					</LABEL>
-	                
-					<LABEL> 
-						<SPAN> Cruzeiro: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT viagem, viagem FROM geral ORDER BY viagem");
-						    //chama a função
-						    montaCombo('comboCruz', $rs, 'viagem', 'viagem');
-						?>
-					</LABEL>
+                </br>
+                <H2> Informações Base </H2>
 
+                <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
 					<LABEL> 
 						<SPAN> Data: </SPAN>
 						<INPUT type="date" class="input_text" name="data" />
@@ -60,7 +70,7 @@
 
 					<LABEL> 
 						<SPAN> Horário do por-do-sol: </SPAN>
-						<INPUT type="time" class="input_text" name="hora_sol" />
+						<INPUT type="time" class="input_text" name="pds_hora" />
 					</LABEL>
 					
 					<LABEL> 
@@ -70,14 +80,16 @@
 
 					<LABEL> 
 						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long" />
+						<INPUT type="text" class="input_text" name="lon" />
 					</LABEL>
-
+					
 					<LABEL> 
 						<SPAN> Lance: </SPAN>
 						<INPUT type="number" class="input_text" name="lance" />
 					</LABEL>
+				</DIV>
 
+				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL>
 						<SPAN> Toriline </SPAN>
 						<FIELDSET class="input_text">
@@ -85,9 +97,7 @@
 							<input type="radio" name="tor" value="n"> Não </input>
 						</FIELDSET>
 					</LABEL>
-				</DIV>
 
-				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL>
 						<SPAN> Isca tingida </SPAN>
 						<FIELDSET class="input_text">
@@ -97,29 +107,36 @@
 					</LABEL>
 
 					<LABEL> 
-						<SPAN> Índice da contagem: </SPAN>
-						<INPUT type="number" class="input_text" name="indice" />
-					</LABEL>
-					
-					<LABEL> 
-						<SPAN> Hora: </SPAN>
-						<INPUT type="time" class="input_text" name="hora" />
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Total: </SPAN>
-						<INPUT type="number" class="input_text" name="total" />
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Espécies alvo: </SPAN> <!-- Criar uma classe css para o checkbox !-->
-						<INPUT type="text" class="input_text" name="especie" />
-					</LABEL>
-
-					<LABEL> 
 						<SPAN> Observações </SPAN> 
 						<TEXTAREA class="message" name="obs" id="obs"></TEXTAREA>
 						<p class='hint'> Limite de 500 caracteres. </p>
+					</LABEL>
+				</DIV>
+
+				<H2> Contagens </H2>
+				<DIV class="box4" id="campoPai">
+					<LABEL> 
+						<SPAN> Índice da contagem: </SPAN>
+						<INPUT type="number" class="input_text" name="cont_id" />
+					
+						<SPAN> Hora: </SPAN>
+						<INPUT type="time" class="input_text" name="cont_hora" />
+					 
+						<SPAN> Total: </SPAN>
+						<INPUT type="number" class="input_text" name="cont-total" />
+					</LABEL>
+					<hr/>
+					<LABEL>
+						<SPAN> Espécie: </SPAN>
+						<?php
+						    //consulta
+						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'aves' ORDER BY nome_popular");
+						    //chama a função
+						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
+						?>
+						<SPAN> Quantidade: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_cont[]" />
+						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 				</DIV>
 

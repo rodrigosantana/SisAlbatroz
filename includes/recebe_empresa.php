@@ -14,11 +14,13 @@ require_once('../database/conexao.php');
 
 //Definindo as variáveis de conexão com o servidor e BD
 $nome = $_POST["nome"];
-$cnpj = $_POST["cnpj"]; 
+$cnpj = $_POST["cnpj"];
+$contato = $_POST["contato"];
+$tel = $_POST["tel"]; 
 
 // Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
-mysql_query("INSERT INTO empresa (nome, cnpj)
-	VALUES ('$nome', '$cnpj')", $link);
+mysql_query("INSERT INTO empresa (nome, cnpj, contato, tel)
+	VALUES ('$nome', '$cnpj', '$contato', '$tel')", $link);
 
 //fechando a conexão com o banco de dados
 mysql_close($link);

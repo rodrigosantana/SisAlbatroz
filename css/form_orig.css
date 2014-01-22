@@ -21,8 +21,6 @@ font-weight: bold;
 
 .hide {display:none;} /* classe associada ao form, utilizando javascript, enviado pelo ismael, analisar este uso e modificações */
 
-/*____________________________________________________________________________________________________________________________________________________________________________*/
-
 
 /* BOX mais externo que contém o FORMULÁRIO */ 
 div.box {
@@ -70,6 +68,7 @@ div.box H3 {
     text-align: center;
 }
 
+
 /* Configuração da coluna da esquerda do BOX do formulário */
 div.box .esquerda {
     width: 46%;
@@ -103,7 +102,7 @@ div.box .message {
     border-left: 1px double #FFFFFF;
     border-right: 1px double #FFFFFF;
     overflow: hidden;
-    min-height: 10%;
+    min-height: 10.6%;
 }
 
 
@@ -252,6 +251,7 @@ div.box label {
     padding: 10px 0 10px 0;
 }
 
+
 /* Configuração do campo inserido dentro do bloco LABEL */
 div.box label span {
     display: block;
@@ -288,6 +288,7 @@ div.box .input_text {
     border-right: 1px double #333333;
 }
 
+
 .hint {
    display: none;
 }
@@ -304,6 +305,7 @@ label:hover .hint {
     border-radius: 7px;
 }
 
+
 /* Configuraçõs da tabela de consulta dos dados do banco */
 /* Box mais externo da tabela */
 div.box3 {
@@ -312,6 +314,7 @@ div.box3 {
     background: #222222;
     margin: 2% 5%;
     border: 1px solid #262626;
+
 }
 
 /* BOX que contém o CABEÇALHO da área da TABELA */
@@ -332,213 +335,6 @@ div.box3 H1 {
     margin: auto;
 }
 
- /*____________________________________________________________________________________________________________________________________________________________________________*/
- /* Config dos forms dinâmicos */
-
-div.box4 {
-    margin:  2% 5%;
-    min-width: 600px;
-    width: 96%;
-    background: #222222 ;
-    float: left;
-    border: 1px solid #262626;
-    margin: 1% 2% 1% 2%;
-}
-
-/* BOX que contém o CABEÇALHO do FORMULÁRIO */
-div.box4 H1 {
-    color: #8fbc8f;
-    font-size: 130%;
-    text-transform: uppercase;
-    padding: 5px 0 5px 5px;
-    border-bottom: 1px solid #161712;
-    border-top: 1px solid #161712;
-    text-align: center;
-}
-
-/* BOX que contém o CABEÇALHO secundário do FORMULÁRIO */
-div.box4 H2 {
-    color: #8fbc8f;
-    min-width: 600px;
-    width: 100%;
-    float: left;
-    font-size: 120%;
-    text-transform: uppercase;
-    padding: 5px 0 5px 5px;
-    border-bottom: 1px solid #161712;
-    border-top: 1px solid #161712;
-    text-align: center;
-}
-
-/* BOX que contém o CABEÇALHO secundário do FORMULÁRIO */
-div.box4 H3 {
-    color: #8fbc8f;
-    font-size: 110%;
-    text-transform: uppercase;
-    padding: 5px 0 5px 5px;
-    border-bottom: 1px solid #161712;
-    border-top: 1px solid #161712;
-    text-align: center;
-}
-
-/* Configurações do BLOCO a ser inserido */
-div.box4 label {
-    display: block;
-    background: #1c1c1c;
-    border-top: 1px solid #161712;
-    border-bottom: 1px solid #161712;
-    padding: 10px 0 50px 0;
-    position: relative;
-}
-
-/* Configurações do BLOCO a ser inserido */
-div.box4 .labeldin {
-    display: block;
-    background: #1c1c1c;
-    border-top: 1px solid #161712;
-    border-bottom: 1px solid #161712;
-    padding: 10px 0 10px 0;
-    position: relative;
-}
-
-/* Configuração do campo inserido dentro do bloco LABEL */
-div.box4 label span {
-    display: block;
-    color: #bbbbbb;
-    font-size: 100%;
-    float: left;
-    width: 10%;
-    min-width: 7%;
-    text-align: right;
-    padding: 5px 5px 0 0;
-    position: relative;
-    left: 1%;
-    margin-left: 3%;
-}
-
-/* Configuração da coluna da esquerda do BOX do formulário */
-div.box4 .esquerda {
-    width: 46%;
-    min-width: 300px;
-    float: left;
-    margin: 1% 2% 1% 2%;
-}
-
-/* Configuração da coluna da direita do BOX do formulário */
-div.box4 .direita {
-    width: 46%;
-    min-width: 300px;
-    float: left;
-    margin: 1% 2% 1% 2%;
-}
-
-/* Configuração da coluna da centralizada do BOX do formulário */
-div.box4 .centro {
-    width: 96%;
-    float: left;
-    margin: 1% 2% 1% 2%;
-}
-
-div.box4 .message {
-    padding: 7px 7px;
-    width: 55%;
-    min-width: 145px;
-    background: #262626;
-    border-bottom: 1px double #FFFFFF;
-    border-top: 1px double #FFFFFF;
-    border-left: 1px double #FFFFFF;
-    border-right: 1px double #FFFFFF;
-    overflow: hidden;
-    min-height: 10%;
-}
-
-div.box4 .combobox {
-    padding: 10px 10px;
-    width: 15%;
-    min-width: 50px;
-    background: #262626;
-    border-bottom: 1px double #171717;
-    border-top: 1px double #171717;
-    border-left: 1px double #333333;
-    border-right: 1px double #333333;
-    font-size: 90%;
-    float: left;
-    margin-left: 1%;
-}
-
-div.box4 .input_text {
-    padding: 10px 10px;
-    width: 15%;
-    background: #262626;
-    border-bottom: 1px double #171717;
-    border-top: 1px double #171717;
-    border-left: 1px double #333333;
-    border-right: 1px double #333333;
-    float: left;
-    margin-left: 1%;
-}
-
-/* Botão de SUBMETER do BOX do Formulário */
-div.box4 .add {
-
-    margin: 0.3% 1% 0% 1%;
-    font-weight: bold;
-    line-height: 1;
-    padding: 0.34% 0.6%;
-    cursor:pointer;
-    color: #fff;
-    float: right;
-    text-align: center;
-    text-shadow: 0 -1px 1px #64799e;
- 
-    /* Gradiente de fundo */
-    background: #a5b8da;
-    background: -moz-linear-gradient(top, #a5b8da 0%, #7089b3 100%);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a5b8da), to(#7089b3));
- 
-    /* Estilo de borda */
-    border: 1px solid #5c6f91;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
- 
-    /* Sobra do box */
-    -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
-    -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
-    box-shadow: inset 0 1px 0 0 #aec3e5;
-}
-
-/* Botão de LIMPAR do BOX do Formulário */
-div.box4 .remov {
-
-    margin: 0.3% 1% 0% 1%;
-    font-weight: bold;
-    line-height: 1;
-    padding: 0.34% 0.6%;
-    cursor:pointer;
-    color: #fff;
-    float: right;
-    text-align: center;
-    text-shadow: 0 -1px 1px #64799e;
- 
-    /* Gradiente de fundo */
-    background: #a5b8da;
-    background: -moz-linear-gradient(top, #a5b8da 0%, #7089b3 100%);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a5b8da), to(#7089b3));
- 
-    /* Estilo de borda */
-    border: 1px solid #5c6f91;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
- 
-    /* Sobra do box */
-    -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
-    -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
-    box-shadow: inset 0 1px 0 0 #aec3e5;
-}
-
- /*____________________________________________________________________________________________________________________________________________________________________________*/
 /* Início das configurações do menu */
 #menu-bar {
   width: 98.2%;
@@ -682,4 +478,3 @@ div.box4 .remov {
 * html #menu-bar {
   height: 1%;
 }
-/*____________________________________________________________________________________________________________________________________________________________________________*/

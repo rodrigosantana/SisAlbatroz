@@ -11,6 +11,16 @@ function montaCombo($nome, $rs, $valor, $descricao){
 	echo("</select>");
 }
 
+//Função monta combo para utilizar css modificado para os forms dinamicos
+function dinCombo($nome, $rs, $valor, $descricao){
+   	echo("<select  class='combobox' name='combo[]'>n");
+	echo("t<option>--Selecione--</option>n");
+	while ($obj = mysql_fetch_object($rs)){			
+		echo("t<option value='".$obj->$valor."'> ". $obj->$descricao." </option>n");
+	}
+	echo("</select>");
+}
+
 // Modo de utilização: 
 // $rs = mysql_query("SELECT id, campo FROM tabela ORDER BY campo"); //exemplo de uso da função
 ?>

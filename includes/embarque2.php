@@ -18,6 +18,28 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE> Cadastro de Viagem </TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+   	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+ 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script type="text/javascript">
+	$(function() {
+	    $( "#dialog-confirm" ).dialog({
+		    resizable: false,
+		    height:140,
+		    modal: true,
+		    buttons: {
+		        "Delete all items": function() {
+		          $( this ).dialog( "close" );
+		        },
+		        Cancel: function() {
+		          $( this ).dialog( "close" );
+		        }
+		    }
+	    });
+	});
+	</script>
 	</HEAD>
 
  	<HEADER align="middle">
@@ -100,10 +122,17 @@
 					</LABEL>
 				</DIV>
 
-				<?php include 'botoes.php'; ?>
+				<DIV class="centro">
+				    <BUTTON type="submit" name="submeter" class="submeter"> Submeter </BUTTON> 
+				    <BUTTON type="reset" name="limpar" class="blimpar"> Limpar </BUTTON>
+				</DIV>
 
             </FORM> 
         </DIV>    
+        
+        <div id="dialog-confirm" title="Empty the recycle bin?">
+			<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
+		</div>
 		
 <BR /><BR /><BR /><BR /><BR /><BR /> 
 	</BODY>

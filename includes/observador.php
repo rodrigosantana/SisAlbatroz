@@ -17,7 +17,6 @@
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8" > <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE> Observador </TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
-	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
 	</HEAD>
 
@@ -72,8 +71,6 @@
 						<SPAN>Foto (.jpg, .gif, .png; até 2MB)</SPAN>
 						<INPUT type="file" name="arquivo" class="input_text" />
 					</LABEL>
-					
-					
 				</DIV>
 
 				<?php include 'botoes.php'; ?>

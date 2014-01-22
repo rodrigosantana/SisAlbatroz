@@ -33,6 +33,6 @@ $result = mysql_query($query, $link);
 //fechando a conexão com o banco de dados
 mysql_close($link);
 
-header("location:abiotico.php");
+header("location:capt_inci.php");
 
 ?>
