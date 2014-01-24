@@ -34,15 +34,6 @@
                 <H1> Cadastro de Dados Abióticos </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 
                 <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
-                	<LABEL> 
-						<SPAN> Embarcação: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome FROM embarcacao ORDER BY nome");
-						    //chama a função
-						    montaCombo('comboBarco', $rs, 'id', 'nome');
-						?>
-					</LABEL>
 	                
 					<LABEL> 
 						<SPAN> Lance: </SPAN>
@@ -68,13 +59,14 @@
 						    montaCombo('comboEspe', $rs, 'id', 'nome_popular');
 						?>
 					</LABEL>
-				</DIV>
-
-				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
+					
 					<LABEL> 
 						<SPAN> Anzóis: </SPAN>
 						<INPUT type="number" class="input_text" name="anzol" />
 					</LABEL>
+				</DIV>
+
+				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					
 					<LABEL>
 						<SPAN> Reg. Peso </SPAN>

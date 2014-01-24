@@ -12,32 +12,24 @@
 //Abrindo conexão com o servidor e BD
 require_once('../database/conexao.php');
 
-//Definindo as variáveis de conexão com o servidor e BD
 $lance = $_POST["lance"];
 $data = $_POST["data"];
-$combo = $_POST["combo"];
-$etiqueta = $_POST["etiqueta"]; 
 $boia = $_POST["boia"];
-$quant = $_POST["quant"]; 
-$lat = $_POST["lat"];
-$lon = $_POST["lon"];
+$especie = $_POST["combo"];
+$cont_esp = $_POST["cont_esp"];
+$preda = $_POST["preda"];
 
 $i=0;
-$elementos = count($lance);
+$elementos = count($especie);
 for ($i=0; $i < $elementos; $i++){
-		$query = "INSERT INTO capt_incidental (lance, data, especie, etiqueta, boia_radio, quantidade, lat, lon) 
-			VALUES ('$lance[$i]', '$data[$i]', '$combo[$i]', '$etiqueta[$i]', '$boia[$i]', '$quant[$i]', '$lat[$i]', '$lon[$i]')";
+		$query = "INSERT INTO prod_pesca (lance, data, boia, especie, quantidade, predacao)
+			VALUES ('$lance', '$data', '$boia', '$especie[$i]', '$cont_esp[$i]', '$preda[$i]')";
 		$result = mysql_query($query, $link);
 	}
 
-var_dump($query);
-var_dump(mysql_error());
-exit();
 //fechando a conexão com o banco de dados
 mysql_close($link);
 
-
-
-header("location:capt_inci.php");
+header("location:prod_pesca.php");
 
 ?>

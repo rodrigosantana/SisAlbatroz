@@ -18,6 +18,48 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Captura Incidental</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<script type="text/javascript">
+		var qtdeCampos = 0;
+
+		function addCampos() {
+		var objPai = document.getElementById("campoPai");
+		//Criando o elemento DIV;
+		var objFilho = document.createElement("div");
+		//Definindo atributos ao objFilho:
+		objFilho.setAttribute("id","filho"+qtdeCampos);
+
+		//Inserindo o elemento no pai:
+		objPai.appendChild(objFilho);
+		//Escrevendo algo no filho recém-criado:
+		document.getElementById("filho"+qtdeCampos).innerHTML = 
+			"<label> \
+			<SPAN> Lance: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='lance[]' /> \
+			<SPAN> Data: </SPAN> <INPUT type='date' class='input_text' id='campo"+qtdeCampos+"' name='data[]' /> \
+			<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
+				dinCombo('comboBarco', $rs, 'id', 'nome_popular');?> \
+			</label> \
+			<label> \
+			<SPAN> Etiqueta: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='etiqueta[]' /> \
+			<SPAN> Boia Rádio: </SPAN> <INPUT type=number' class='input_text' id='campo"+qtdeCampos+"' name='boia[]' /> \
+			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='quant[]'> \
+			</label> \
+			<label> \
+			<SPAN> Latitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lat[]' /> \
+			<SPAN> Longitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lon[]' /> \
+			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'> \
+			</label> \
+			<hr/>";
+		qtdeCampos++;
+		}
+
+		function removerCampo(id) {
+		var objPai = document.getElementById("campoPai");
+		var objFilho = document.getElementById("filho"+id);
+
+		//Removendo o DIV com id específico do nó-pai:
+		var removido = objPai.removeChild(objFilho);
+		}
+	</script>
 	</HEAD>
 
  	<HEADER>
@@ -29,86 +71,48 @@
             <FORM id="form" method="post" action="recebe_capt_inci.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> Captura Incidental </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 
-                <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
+                <DIV class="box4" id="campoPai"> <!-- Box da coluna da esquerda !-->
                 	<LABEL> 
-						<SPAN> Embarcação: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome FROM embarcacao ORDER BY nome");
-						    //chama a função
-						    montaCombo('comboBarco', $rs, 'id', 'nome');
-						?>
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Cruzeiro: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT viagem, viagem FROM geral ORDER BY viagem");
-						    //chama a função
-						    montaCombo('comboCruz', $rs, 'viagem', 'viagem');
-						?>
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Observador: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome FROM observador ORDER BY nome");
-						    //chama a função
-						    montaCombo('comboObser', $rs, 'id', 'nome');
-						?>
-					</LABEL>
-	                
-	                <LABEL> 
-						<SPAN> Espécie: </SPAN> <!-- Criar uma classe css para o checkbox !-->
-						<INPUT type="text" class="input_text" name="especie" />
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Data: </SPAN>
-						<INPUT type="date" class="input_text" name="data" />
-					</LABEL>
-
-					<LABEL> 
 						<SPAN> Lance: </SPAN>
-						<INPUT type="number" class="input_text" name="lance" />
-					</LABEL>
-				</DIV>
+						<INPUT type="number" class="input_text" name="lance[]" />
+					
+						<SPAN> Data: </SPAN>
+						<INPUT type="date" class="input_text" name="data[]" />
 
-				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
-					<LABEL> 
-						<SPAN> Etiqueta: </SPAN>
-						<INPUT type="number" class="input_text" name="etiqueta" />
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Boia Rádio: </SPAN>
-						<INPUT type="number" class="input_text" name="boia" />
+						<SPAN> Espécie: </SPAN> <!-- Criar uma classe css para o checkbox !-->
+						<?php
+						    //consulta
+						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
+						    //chama a função
+						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
+						?>
 					</LABEL>
 					
 					<LABEL> 
-						<SPAN> Quantidade: </SPAN>
-						<INPUT type="number" class="input_text" name="quant" />
-					</LABEL>
+						<SPAN> Etiqueta: </SPAN>
+						<INPUT type="number" class="input_text" name="etiqueta[]" />
 
+						<SPAN> Boia Rádio: </SPAN>
+						<INPUT type="number" class="input_text" name="boia[]" />
+
+						<SPAN> Quantidade: </SPAN>
+						<INPUT type="number" class="input_text" name="quant[]" />
+					</LABEL>
+								
 					<LABEL> 
 						<SPAN> Latitude: </SPAN>
-						<INPUT type="text" class="input_text" name="lat" />
-					</LABEL>
-
-					<LABEL> 
+						<INPUT type="text" class="input_text" name="lat[]" />
+					
 						<SPAN> Longitude: </SPAN>
-						<INPUT type="text" class="input_text" name="long" />
+						<INPUT type="text" class="input_text" name="lon[]" />
+						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
-					<LABEL> 
-						<SPAN> Observações </SPAN> 
-						<TEXTAREA class="message" name="obs" id="obs"></TEXTAREA>
-						<p class='hint'> Limite de 500 caracteres. </p>
-					</LABEL>
+					<hr/>
 				</DIV>
 
 				<?php include 'botoes.php'; ?>
+			</FORM>
+		</DIV>
             
 <BR /><BR /><BR /><BR /><BR /><BR /> 
 	</BODY>

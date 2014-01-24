@@ -20,6 +20,36 @@
 	<TITLE>Produção Pesqueira</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /></LINK> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<script type="text/javascript">
+		var qtdeCampos = 0;
+
+		function addCampos() {
+		var objPai = document.getElementById("campoPai");
+		//Criando o elemento DIV;
+		var objFilho = document.createElement("label");
+		//Definindo atributos ao objFilho:
+		objFilho.setAttribute("id","filho"+qtdeCampos);
+
+		//Inserindo o elemento no pai:
+		objPai.appendChild(objFilho);
+		//Escrevendo algo no filho recém-criado:
+		document.getElementById("filho"+qtdeCampos).innerHTML =
+			"<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
+			  dinCombo('comboBarco', $rs, 'id', 'nome_popular');?>\
+			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='cont_esp[]' /> \
+			<SPAN> Predação: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='preda[]' /> \
+			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'>";
+		qtdeCampos++;
+		}
+
+		function removerCampo(id) {
+		var objPai = document.getElementById("campoPai");
+		var objFilho = document.getElementById("filho"+id);
+
+		//Removendo o DIV com id específico do nó-pai:
+		var removido = objPai.removeChild(objFilho);
+		}
+	</script>
 	</HEAD>
 
  	<HEADER align="middle">
@@ -33,75 +63,48 @@
             <FORM id="form" method="post" action="recebe_prod_pesca.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> Produção Pesqueira </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 
-                <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
+                <DIV class="box4" id='campoPai'>
                 	<LABEL> 
-						<SPAN> Embarcação: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome FROM embarcacao ORDER BY nome");
-						    //chama a função
-						    montaCombo('comboBarco', $rs, 'id', 'nome');
-						?>
-					</LABEL>
-
-					<LABEL> 
 						<SPAN> Cruzeiro: </SPAN>
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT viagem, viagem FROM geral ORDER BY viagem");
-						    //chama a função
-						    montaCombo('comboCruz', $rs, 'viagem', 'viagem');
-						?>
+						<INPUT type="text" class="input_text" name="cruz" />
+						<SPAN> Observador: </SPAN>
+						<INPUT type="text" class="input_text" name="obser" />
+						<SPAN> Embarcação: </SPAN>
+						<INPUT type="text" class="input_text" name="barco" />
 					</LABEL>
-
+                	<br/>
 					<LABEL> 
 						<SPAN> Lance: </SPAN>
 						<INPUT type="number" class="input_text" name="lance" />
-					</LABEL>
-	                
-	                <LABEL> 
-						<SPAN> Cod. Boia Rádio: </SPAN>
-						<INPUT type="number" class="input_text" name="codboiaradio" />
-					</LABEL>
-
-					<LABEL> 
+					
 						<SPAN> Data: </SPAN>
 						<INPUT type="date" class="input_text" name="data" />
+					
+						<SPAN> Boia Rádio: </SPAN>
+						<INPUT type="number" class="input_text" name="boia" />
 					</LABEL>
-
+					<hr/>
 					<LABEL> 
 						<SPAN> Espécies: </SPAN>
-						<INPUT type="number" class="input_text" name="especie" />
-					</LABEL>
+						<?php
+						    //consulta
+						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
+						    //chama a função
+						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
+						?>
 
-					
-				</DIV>
-				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
-					<LABEL> 
-						<SPAN> Predação: </SPAN>
-						<INPUT type="text" class="input_text" name="preda" />
-					</LABEL>
-
-					<LABEL> 
-						<SPAN> Obs. Predação </SPAN> 
-						<TEXTAREA class="message" name="obs" id="obs_preda"></TEXTAREA>
-						<p class='hint'> Limite de 500 caracteres. </p>
-					</LABEL>
-
-					<LABEL> 
 						<SPAN> Quantidade: </SPAN>
-						<INPUT type="number" class="input_text" name="quant" />
-					</LABEL>
-
-	                <LABEL> 
-						<SPAN> Observação </SPAN> 
-						<TEXTAREA class="message" name="obs" id="obs"></TEXTAREA>
-						<p class='hint'> Limite de 500 caracteres. </p>
+						<INPUT type="number" class="input_text" name="cont_esp[]" />
+					
+						<SPAN> Predação: </SPAN>
+						<INPUT type="text" class="input_text" name="preda[]" />
+						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 				</DIV>
 				
 				<?php include 'botoes.php'; ?>
-            
+            </FORM>
+        </DIV>
 <BR /><BR /><BR /><BR /><BR /><BR /> 
 	</BODY>
 </HTML> <!-- Finaliza a páginal HTML !--> 
