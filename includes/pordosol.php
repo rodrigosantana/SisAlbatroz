@@ -32,9 +32,9 @@
 		objPai.appendChild(objFilho);
 		//Escrevendo algo no filho recém-criado:
 		document.getElementById("filho"+qtdeCampos).innerHTML =
-			"<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'aves' ORDER BY nome_popular");
+			"<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies ORDER BY nome_popular");
 			  dinCombo('comboBarco', $rs, 'id', 'nome_popular');?>\
-			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='cont_esp[]'> \
+			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='esp_cont[]'> \
 			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'>";
 		qtdeCampos++;
 		}
@@ -70,7 +70,7 @@
 
 					<LABEL> 
 						<SPAN> Horário do por-do-sol: </SPAN>
-						<INPUT type="time" class="input_text" name="hora" />
+						<INPUT type="time" class="input_text" name="pds_hora" />
 					</LABEL>
 					
 					<LABEL> 
@@ -93,8 +93,8 @@
 					<LABEL>
 						<SPAN> Toriline </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="toriline" value="s"> Sim </input> 
-							<input type="radio" name="toriline" value="n"> Não </input>
+							<input type="radio" name="tor" value="s"> Sim </input> 
+							<input type="radio" name="tor" value="n"> Não </input>
 						</FIELDSET>
 					</LABEL>
 
@@ -123,7 +123,7 @@
 						<INPUT type="time" class="input_text" name="cont_hora" />
 					 
 						<SPAN> Total: </SPAN>
-						<INPUT type="number" class="input_text" name="cont_total" />
+						<INPUT type="number" class="input_text" name="cont-total" />
 					</LABEL>
 					<hr/>
 					<LABEL>
@@ -135,7 +135,7 @@
 						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
 						?>
 						<SPAN> Quantidade: </SPAN>
-						<INPUT type="number" class="input_text" name="cont_esp[]" />
+						<INPUT type="number" class="input_text" name="esp_cont[]" />
 						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 				</DIV>

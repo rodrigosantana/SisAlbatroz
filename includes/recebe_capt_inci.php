@@ -13,30 +13,25 @@
 require_once('../database/conexao.php');
 
 //Definindo as variáveis de conexão com o servidor e BD
+$cod_embar = $_POST["comboBarco"];
 $lance = $_POST["lance"];
-$data = $_POST["data"];
-$combo = $_POST["combo"];
-$etiqueta = $_POST["etiqueta"]; 
-$boia = $_POST["boia"];
-$quant = $_POST["quant"]; 
-$lat = $_POST["lat"];
-$lon = $_POST["lon"];
+$isca = $_POST["isca"]; 
+$alvo = $_POST["alvo"];
+$anzol = $_POST["anzol"]; 
+$reg_peso = $_POST["reg_peso"];
+$tingida = $_POST["tingida"];
+$tor = $_POST["tor"];
+$obs = $_POST["obs"];
 
-$i=0;
-$elementos = count($lance);
-for ($i=0; $i < $elementos; $i++){
-		$query = "INSERT INTO capt_incidental (lance, data, especie, etiqueta, boia_radio, quantidade, lat, lon) 
-			VALUES ('$lance[$i]', '$data[$i]', '$combo[$i]', '$etiqueta[$i]', '$boia[$i]', '$quant[$i]', '$lat[$i]', '$lon[$i]')";
-		$result = mysql_query($query, $link);
-	}
 
-var_dump($query);
-var_dump(mysql_error());
-exit();
+// Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
+$query = "INSERT INTO abiotico (embarcacao, lance, isca, alvo, anzol, reg_peso, tingida, tor, obs) VALUES ('$cod_embar', '$lance', '$isca', '$alvo', '$anzol', '$reg_peso',
+'$tingida', '$tor', '$obs')";
+
+$result = mysql_query($query, $link);
+
 //fechando a conexão com o banco de dados
 mysql_close($link);
-
-
 
 header("location:capt_inci.php");
 

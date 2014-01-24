@@ -13,6 +13,7 @@
 require_once('../database/conexao.php');
 
 //Definindo as variáveis de conexão com o servidor e BD
+$cod_embar = $_POST["comboBarco"];
 $lance = $_POST["lance"];
 $isca = $_POST["isca"]; 
 $alvo = $_POST["alvo"];
