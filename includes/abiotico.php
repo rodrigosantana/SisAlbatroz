@@ -31,7 +31,8 @@
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
             <FORM id="form" method="post" action="recebe_abiotico.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 
-                <H1> Cadastro de Dados Abióticos </H1> <!-- Cabeçalho da caixa principal do formulário !-->
+                <H1> Dados Abióticos </H1> <!-- Cabeçalho da caixa principal do formulário !-->
+                <H2>Informações Gerais</H2>
                 
                 <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
 	                

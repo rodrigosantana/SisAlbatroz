@@ -33,20 +33,20 @@
 		//Escrevendo algo no filho recém-criado:
 		document.getElementById("filho"+qtdeCampos).innerHTML = 
 			"<label> \
-			<SPAN> Lance: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='lance[]' /> \
-			<SPAN> Data: </SPAN> <INPUT type='date' class='input_text' id='campo"+qtdeCampos+"' name='data[]' /> \
-			<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
-				dinCombo('comboBarco', $rs, 'id', 'nome_popular');?> \
+				<SPAN> Lance: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='lance[]' /> \
+				<SPAN> Data: </SPAN> <INPUT type='date' class='input_text' id='campo"+qtdeCampos+"' name='data[]' /> \
+				<SPAN> Boia Rádio: </SPAN> <INPUT type=number' class='input_text' id='campo"+qtdeCampos+"' name='boia[]' /> \
 			</label> \
 			<label> \
-			<SPAN> Etiqueta: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='etiqueta[]' /> \
-			<SPAN> Boia Rádio: </SPAN> <INPUT type=number' class='input_text' id='campo"+qtdeCampos+"' name='boia[]' /> \
-			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='quant[]'> \
+				<SPAN> Latitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lat[]' /> \
+				<SPAN> Longitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lon[]' /> \
 			</label> \
 			<label> \
-			<SPAN> Latitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lat[]' /> \
-			<SPAN> Longitude: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='lon[]' /> \
-			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'> \
+				<SPAN> Etiqueta: </SPAN> <INPUT type='number' class='input_text' id='campo"+qtdeCampos+"' name='etiqueta[]' /> \
+				<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'aves' ORDER BY nome_popular");
+					dinCombo('comboBarco', $rs, 'id', 'nome_popular');?> \
+				<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='quant[]'> \
+				<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'> \
 			</label> \
 			<hr/>";
 		qtdeCampos++;
@@ -79,32 +79,34 @@
 						<SPAN> Data: </SPAN>
 						<INPUT type="date" class="input_text" name="data[]" />
 
-						<SPAN> Espécie: </SPAN> <!-- Criar uma classe css para o checkbox !-->
-						<?php
-						    //consulta
-						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
-						    //chama a função
-						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
-						?>
-					</LABEL>
-					
-					<LABEL> 
-						<SPAN> Etiqueta: </SPAN>
-						<INPUT type="number" class="input_text" name="etiqueta[]" />
-
 						<SPAN> Boia Rádio: </SPAN>
 						<INPUT type="number" class="input_text" name="boia[]" />
-
-						<SPAN> Quantidade: </SPAN>
-						<INPUT type="number" class="input_text" name="quant[]" />
+						
 					</LABEL>
-								
+					
 					<LABEL> 
 						<SPAN> Latitude: </SPAN>
 						<INPUT type="text" class="input_text" name="lat[]" />
 					
 						<SPAN> Longitude: </SPAN>
 						<INPUT type="text" class="input_text" name="lon[]" />
+						
+					</LABEL>
+								
+					<LABEL> 
+						<SPAN> Etiqueta: </SPAN>
+						<INPUT type="number" class="input_text" name="etiqueta[]" />
+
+						<SPAN> Espécie: </SPAN> <!-- Criar uma classe css para o checkbox !-->
+						<?php
+						    //consulta
+						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'aves' ORDER BY nome_popular");
+						    //chama a função
+						    dinCombo('comboEspe', $rs, 'id', 'nome_popular');
+						?>
+
+						<SPAN> Quantidade: </SPAN>
+						<INPUT type="number" class="input_text" name="quant[]" />
 						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 					<hr/>

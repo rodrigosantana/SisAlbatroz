@@ -549,9 +549,9 @@ div.box4 .remov {
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  box-shadow: 2px 2px 3px #666666;
-  -webkit-box-shadow: 2px 2px 3px #666666;
-  -moz-box-shadow: 2px 2px 3px #666666;
+  box-shadow: 1px 1px 2px #666666;
+  -webkit-box-shadow: 1px 1px 2px #666666;
+  -moz-box-shadow: 1px 1px 2px #666666;
   background: #8B8B8B;
   background: linear-gradient(top,  #A9C957,  #051C02);
   background: -ms-linear-gradient(top,  #A9C957,  #051C02);
