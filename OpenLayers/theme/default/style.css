@@ -50,7 +50,7 @@ div.olLayerDiv {
 .olControlScaleLine {
    display: block;
    position: absolute;
-   left: 10px;
+   left: 50%;
    bottom: 15px;
    font-size: xx-small;
 }
@@ -67,38 +67,41 @@ div.olLayerDiv {
 }
 
 .olControlPermalink {
-    right: 3px;
-    bottom: 1.5em;
+    left: 3px;
+    bottom: 5%;
     display: block;
     position: absolute;
-    font-size: smaller;
+    font-size: smaller;    
 }
 
 div.olControlMousePosition {
     bottom: 0;
-    right: 3px;
+    right: 25%;
     display: block;
     position: absolute;
     font-family: Arial;
-    font-size: smaller;
+    font-size: 11pt;
 }
 
 .olControlOverviewMapContainer {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 5%;
+    right: 1%;
 }
 
 .olControlOverviewMapElement {
     padding: 10px 18px 10px 10px;
-    background-color: #00008B;
+    background-color: #000000;
     -moz-border-radius: 1em 0 0 0;
+    border-radius: 10px 0 0 10px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
 }
 
 .olControlOverviewMapMinimizeButton,
 .olControlOverviewMapMaximizeButton {
-    height: 18px;
-    width: 18px;
+    height: 5px;
+    width: 5px;
     right: 0;
     bottom: 80px;
     cursor: pointer;
@@ -108,7 +111,7 @@ div.olControlMousePosition {
     overflow: hidden;
     background-image: url("img/blank.gif");
     cursor: move;
-    border: 2px dotted red;
+    border: 2px dotted green;
 }
 .olControlOverviewMapRectReplacement {
     overflow: hidden;
@@ -326,7 +329,10 @@ div.olControlSaveFeaturesItemInactive {
     padding-left: 10px;
     padding-bottom: 5px;
     padding-right: 10px;
-    background-color: darkblue;
+    background-color: #000000;
+    border-radius: 10px 0 0 10px;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
 }
 
 .olControlLayerSwitcher .layersDiv .baseLbl,
