@@ -1,0 +1,71 @@
+Evolucao SisAlbatroz - 09 de janeiro de 2014
+
+--- Cadastro de Basilares
+
+-- Observadores de Bordo
+1) Adicionar campo skype; OK AS 10/01/14
+2) Adicionar upload de foto do observador; OK AS 12/01/14
+3) Adicionar o nome do observador ao arquivo da foto;
+
+-- Especies
+1) Inserir combobox alternativo para Subcategoria em funcao de Categoria; OK AS 12/01/14
+
+-- Embarcacoes
+1) Alterar Registro para Número de Registro MPA; OK AS 10/01/14
+2) Alterar Porao (ton) para Cap. Porão (t); OK AS 10/01/14
+3) Alterar Arqueacao Bruta (ton) para Arqueacao Bruta (t); OK AS 10/01/14
+4) Alterar Conservacao para Tipo de Conservacao; OK AS 10/01/14
+5) Alterar HTML para number; OK AS 10/01/14
+
+-- Empresas
+1) Inserir nome e telefone de um contato; OK AS 10/01/14
+
+--- Embarques
+
+-- Cadastro de Viagens
+1) Após entrar os dados do cruzeiro, deve retornar um aviso com ID (Codigo da Viagem), Nome da embarcacao e nome do observador.
+    texto do aviso: "Favor criar folha de rosto para arquivamento futuro das planilhas da viagem número = Código do cruzeiro, Nome da embarcacao e Nome do observador";
+
+-- Dados abióticos
+1) Criar um tela de consulta ao banco, onde o usuario irá pesquisar o cruzeiro para posterior insercao dos dados abióticos;
+   Filtros necessário: Nome da embarcacao, Nome do Observador, ID do cruzeiro, data inicio e/ou data fim.
+   Retorna uma tabela com as informações acima, com botao selecionar cruzeiro para entrada de dados abioticos,
+   no topo da tela deve aparecer uma mensagem com o nome da embarcacao e id do cruzeiro ao qual esta sendo realizada a insercao de dados.
+2) Remover do formulario o box de embarcacao;
+3) HTML de Latitude, Longitude, Temperatura do ar e do mar, profundidade, pressao, velocidade do vento para number; OK AS 10/01/14
+4) inserir unidades fixas em todos os nomes dos campos; OK AS 12/01/14
+
+IMPORTANTE: saida para o problema de insercoes multiplas para o banco... fazer com que cada lance seja salvo em uma linha de uma tabela antes de ir 
+para o banco, ao final de todos os lances inseridos, enviar para o banco todo o array, tratar esse array no recebe_formulario.php.
+
+
+-- Contagem-por-do-sol
+1) Inserir consulta igual dados abioticos;
+2) remover campos: Embarcacao, Cruzeiro;
+3) inserir tres novos divs
+   - div1 = Informacoes base
+	- Data, Isca tingida, Horario por do sol, lat e long, lance e toriline
+   - div2 = Contagens
+	- Form dinamico com id contagem, hora, especies de ave, quantidade
+   - div1 = Observacoes
+
+IMPORTANTE: saida para o problema de insercoes multiplas para o banco... fazer com que cada lance seja salvo em uma linha de uma tabela antes de ir 
+para o banco, ao final de todos os lances inseridos, enviar para o banco todo o array, tratar esse array no recebe_formulario.php.
+
+-- Captura incidental
+1) Remover campos: Embarcacao, cruzeiro, observacao e observador
+2) Inserir consulta igual dados abioticos e contagem-por-do-sol
+3) Forms dinamico
+
+-- Contagem aves boia radio
+1) Remover campos: Embarcacao, cruzeiro, observacao e observador
+2) Inserir consulta igual dados abioticos e contagem-por-do-sol
+3) Forms dinamico
+
+-- Producao Pesqueira
+1) Remover campos: Embarcacao, cruzeiro, observacao e observacao predacao
+2) Inserir consulta igual dados abioticos, contagem-por-do-sol e contagem aves boia radio
+3) Forms dinamico
+
+
+
