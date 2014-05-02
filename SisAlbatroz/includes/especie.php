@@ -18,17 +18,13 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Cadastro de Espécies</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
-	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(function(){
-                $('#categ').change(function(){
-                    console.log($(this));
-                    $.get( "especie_combo.php" , { option : $(this).val() } , function ( data ) {
-                        $ ( '#subcateg' ) . html ( data ) ;
-                    } ) ;
-                });
-            });
-    	</script>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="../js/jquery.chained.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        	$("#subcateg").chained("#categ");
+        });
+	</script>
 	</HEAD>
 
  	<HEADER align="middle">
@@ -54,8 +50,11 @@
 
 					<LABEL> 
 						<SPAN> Sub-categoria: </SPAN>
-						<select name="subcateg" id="subcateg"class="input_text">
+						<select name="subcateg" id="subcateg" class="input_text">
 							<option value="">---Selecione---</option>
+							<option value="Não existe" class='Aves'> Não existe </option>
+							<option value="Ósseo" class='Peixes'> Ósseo </option>
+							<option value="Cartilaginoso" class='Peixes'> Cartilaginoso </option>
 						</select>
 					</LABEL>		
 	                
@@ -80,6 +79,7 @@
 
 				<?php include 'botoes.php'; ?>
             
-<BR /><BR /><BR /><BR /><BR /><BR /> 
+<BR /><BR /><BR /><BR /><BR /><BR />
+
 	</BODY>
 </HTML> <!-- Finaliza a páginal HTML !-->

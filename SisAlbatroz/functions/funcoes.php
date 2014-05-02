@@ -2,8 +2,8 @@
 	 // do nome da função
 
 // Função para criar combobox utilizando dados do banco de dados, usando os valores de ID e aparecendo a descrição dos IDs
-function montaCombo($nome, $rs, $valor, $descricao){
-   	echo("<select name='$nome' class='combobox'>n");
+function montaCombo($nome, $id, $rs, $valor, $descricao){
+   	echo("<select name='$nome' class='combobox' id='$id'>n");
 	echo("t<option>--Selecione--</option>n");
 	while ($obj = mysql_fetch_object($rs)){			
 		echo("t<option value='".$obj->$valor."'> ". $obj->$descricao." </option>n");
@@ -27,7 +27,7 @@ function dinCombo($nome, $rs, $valor, $descricao){
 
 <?php 	// Função de consulta genéria ao banco de dados, com diversas opções de resposta
 function select($tabela, $campo, $where=NULL, $order=NULL){
-	$conn = mysql_connect("localhost","root",""); // editar host, usuario, senha
+	$conn = mysql_connect("localhost","root","anakin88"); // editar host, usuario, senha
 	mysql_select_db("albatroz_sis",$conn); // editar para o seu banco de dados
 	$sql = "SELECT {$campo} FROM {$tabela} {$where} {$order}"; 
 	$query = mysql_query($sql);
@@ -91,3 +91,4 @@ function select($tabela, $campo, $where=NULL, $order=NULL){
 }
 */
 ?>
+

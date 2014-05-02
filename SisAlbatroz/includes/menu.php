@@ -55,7 +55,7 @@
 			   <LI><a href="consulta.php">Observadores de bordo</a></LI>
 			   <LI><a href="#">Mapas de bordo</a></LI>
 			   <LI><a href="#">Medicina da conservação</a></LI>
-			   <LI><a href="openlayers.htm">Geodatabase</a></LI>
+			   <LI><a href="openlayers.php">Geodatabase</a></LI>
 			  </UL>
 			 </LI>
 			 <!-- <LI><a href="#">About</a></LI> -->

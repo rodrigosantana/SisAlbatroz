@@ -9,6 +9,7 @@
 
 	require_once('../database/conexao.php');
 	require_once('../functions/funcoes.php'); //importa o arquivo com as funções a serem utilizadas
+	include('select.class.php');
 
 ?>
 
@@ -18,6 +19,10 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Captura Incidental</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<LINK rel="stylesheet" type="text/css" href="../css//custom-theme/jquery-ui-1.10.4.custom.css"></LINK>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src='../js/consulta.js'></script>
+	<script type="text/javascript" src='../js/jquery-ui-1.10.4.custom.min.js'></script>
 	<script type="text/javascript">
 		var qtdeCampos = 0;
 
@@ -70,8 +75,28 @@
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
             <FORM id="form" method="post" action="recebe_capt_inci.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> Captura Incidental </H1> <!-- Cabeçalho da caixa principal do formulário !-->
+
+                <DIV class="box4">
+                	<h3> Consulta do Código do Cruzeiro </h3>
+                	<LABEL>
+                		<span> Observador: </span>
+                		<select id="obser" name="obser" class="input_text">
+						  <?php echo $opt->ShowCategory(); ?>
+						</select>
+						<span> Embarcação: </span>
+						<select id="barco" name="barco" class="input_text">
+						  <option value="0">--Bloueado--</option>
+						</select>
+						<span> Cruzeiro: </span>
+						<select id="cruz" name="cruz" class="input_text">
+						  <option value="0">--Bloqueado--</option>
+						</select>
+					</LABEL>
+				</DIV>
                 
+				<h2> Informações Gerais </h2>
                 <DIV class="box4" id="campoPai"> <!-- Box da coluna da esquerda !-->
+
                 	<LABEL> 
 						<SPAN> Lance: </SPAN>
 						<INPUT type="number" class="input_text" name="lance[]" />
