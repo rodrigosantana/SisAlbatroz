@@ -12,7 +12,6 @@
 //Abrindo conexão com o servidor e BD
 require_once('../database/conexao.php');
 
-$cruz = $_POST["cruz"];
 $lance = $_POST["lance"];
 $data = $_POST["data"];
 $boia = $_POST["boia"];
@@ -20,12 +19,11 @@ $especie = $_POST["combo"];
 $cont_esp = $_POST["cont_esp"];
 $preda = $_POST["preda"];
 
-
 $i=0;
 $elementos = count($especie);
 for ($i=0; $i < $elementos; $i++){
-		$query = "INSERT INTO prod_pesca (cruzeiro, lance, data, boia, especie, quantidade, predacao)
-			VALUES ('$cruz', '$lance', '$data', '$boia', '$especie[$i]', '$cont_esp[$i]', '$preda[$i]')";
+		$query = "INSERT INTO prod_pesca (lance, data, boia, especie, quantidade, predacao)
+			VALUES ('$lance', '$data', '$boia', '$especie[$i]', '$cont_esp[$i]', '$preda[$i]')";
 		$result = mysql_query($query, $link);
 	}
 

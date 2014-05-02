@@ -35,22 +35,38 @@
 							<th>Viagem</th>
 							<th>Observador</th>
 							<th>Embarcação</th>
+							<th>Mestre</th>
+							<th>Empresa</th>
 							<th>Data de Saída</th>
 							<th>Data de Chegada</th>
+							<th>Financiador</th>
+							<th>Observações</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						$query = 
 								"SELECT
-								geral.data_saida,
-								geral.data_chegada,
-								geral.viagem,
+								geral.cod_obser,
+								geral.cod_embar,
+								geral.cod_mestr,
+								geral.cod_empre,
+								geral.data_saida AS data_saida,
+								geral.data_chegada AS data_chegada,
+								geral.financiador AS financiador,
+								geral.obs AS obs,
+								geral.viagem AS viagem,
 								observador.nome AS observador,
-								embarcacao.nome AS barco
-								FROM geral, observador, embarcacao
-								WHERE geral.cod_obser=observador.id AND geral.cod_embar=embarcacao.id
+								embarcacao.nome as embarcacao,
+								mestre.nome AS mestre,
+								empresa.nome AS empresa
+								FROM geral, observador, embarcacao, mestre, empresa
+								WHERE geral.cod_obser = observador.id AND
+								geral.cod_embar = embarcacao.id AND
+								geral.cod_mestr = mestre.id AND
+								geral.cod_empre = empresa.id
 								ORDER BY viagem";
+								
 
 						$result = mysql_query($query);
 						while($dados = mysql_fetch_array($result)):
@@ -60,9 +76,13 @@
 						<tr class='tabcorpo'>
 							<td><?php echo $dados["viagem"] ?></td>
 							<td><?php echo $dados["observador"] ?></td>
-							<td><?php echo $dados["barco"] ?></td>
+							<td><?php echo $dados["embarcacao"] ?></td>
+							<td><?php echo $dados["mestre"] ?></td>
+							<td><?php echo $dados["empresa"] ?></td>
 							<td><?php echo $dados["data_saida"] ?></td>
 							<td><?php echo $dados["data_chegada"] ?></td>
+							<td><?php echo $dados["financiador"] ?></td>
+							<td><?php echo $dados["obs"] ?></td>
 						</tr>
 						<?php endwhile; ?>
 					</tbody>

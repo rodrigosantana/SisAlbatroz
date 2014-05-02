@@ -10,7 +10,7 @@
 
 	require_once('../database/conexao.php');
 	require_once('../functions/funcoes.php'); //importa o arquivo com as funções a serem utilizadas
-	include('select.class.php') // classe com as funções dos combo box em cadeia
+
 ?>
 
 <!DOCTYPE HTML PUBLIC> <!-- Define o tipo de arquivo que vai ser, necessário para que a página seje interpretada corretamente !-->
@@ -18,9 +18,8 @@
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE>Produção Pesqueira</TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
+	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /></LINK> <!-- Faz o link com a página de CSS e chama o arquivo !-->
-	<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
-	<script type="text/javascript" src='../js/consulta.js'></script>
 	<script type="text/javascript">
 		var qtdeCampos = 0;
 
@@ -30,6 +29,7 @@
 		var objFilho = document.createElement("label");
 		//Definindo atributos ao objFilho:
 		objFilho.setAttribute("id","filho"+qtdeCampos);
+
 		//Inserindo o elemento no pai:
 		objPai.appendChild(objFilho);
 		//Escrevendo algo no filho recém-criado:
@@ -51,6 +51,7 @@
 		}
 	</script>
 	</HEAD>
+
  	<HEADER align="middle">
 		<DIV>
 	 		<?php include 'menu.php'; ?>
@@ -63,19 +64,13 @@
                 <H1> Produção Pesqueira </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 
                 <DIV class="box4" id='campoPai'>
-                	<LABEL>
-                		<span> Observador: </span>
-                		<select id="obser" name="obser" class="input_text">
-						  <?php echo $opt->ShowCategory(); ?>
-						</select>
-						<span> Embarcação: </span>
-						<select id="barco" name="barco" class="input_text">
-						  <option value="0">--Bloueado--</option>
-						</select>
-						<span> Cruzeiro: </span>
-						<select id="cruz" name="cruz" class="input_text">
-						  <option value="0">--Bloqueado--</option>
-						</select>
+                	<LABEL> 
+						<SPAN> Cruzeiro: </SPAN>
+						<INPUT type="text" class="input_text" name="cruz" />
+						<SPAN> Observador: </SPAN>
+						<INPUT type="text" class="input_text" name="obser" />
+						<SPAN> Embarcação: </SPAN>
+						<INPUT type="text" class="input_text" name="barco" />
 					</LABEL>
                 	<br/>
 					<LABEL> 
@@ -106,6 +101,7 @@
 						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 				</DIV>
+				
 				<?php include 'botoes.php'; ?>
             </FORM>
         </DIV>

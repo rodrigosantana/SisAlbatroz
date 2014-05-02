@@ -11,7 +11,7 @@
 
 //Abrindo conexão com o servidor e BD
 require_once('../database/conexao.php');
-include("salvar_imagem.php");
+require_once "salvar_imagem.php";
 
 //Definindo as variáveis de conexão com o servidor e BD
 $nome = $_POST["nome"];

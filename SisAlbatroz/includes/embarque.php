@@ -18,16 +18,8 @@
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE> Cadastro de Viagem </TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" />
-	<LINK rel="stylesheet" type="text/css" href="../css//custom-theme/jquery-ui-1.10.4.custom.css"></LINK>
-	<script type="text/javascript" src='../js/jquery-1.10.2.js'></script>
-	<script type="text/javascript" src='../js/jquery-ui-1.10.4.custom.min.js'></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#data_saida").datepicker({dateFormat: 'yy-mm-dd'});
-			$("#data_chegada").datepicker({dateFormat: 'yy-mm-dd'});
-		});
-	</script>
 	</HEAD>
+
  	<HEADER align="middle">
 		<DIV>
 	 		<?php include 'menu.php'; ?>
@@ -46,7 +38,7 @@
 						    //consulta ao banco de dados para pegar a lista desejada para montar o combobox
 						    $rs = mysql_query("SELECT id, nome FROM observador ORDER BY nome");
 						    //chama a função customizada para criar combobox com dados do banco
-						    montaCombo('comboObservador', 'combo_obser', $rs, 'id', 'nome');
+						    montaCombo('comboObservador', $rs, 'id', 'nome');
 						    ?>
 					</LABEL>
 
@@ -56,7 +48,7 @@
 						    //consulta
 						    $rs = mysql_query("SELECT id, nome FROM embarcacao ORDER BY nome");
 						    //chama a função
-						    montaCombo('comboBarco', 'combo_embar', $rs, 'id', 'nome');
+						    montaCombo('comboBarco', $rs, 'id', 'nome');
 						?>
 					</LABEL>
 
@@ -66,7 +58,7 @@
 						    //consulta
 						    $rs = mysql_query("SELECT id, nome FROM mestre ORDER BY nome");
 						     //chama a função
-						    montaCombo('comboMestre', 'combo_mestre', $rs, 'id', 'nome');
+						    montaCombo('comboMestre', $rs, 'id', 'nome');
 						?>
 					</LABEL>
 
@@ -76,7 +68,7 @@
 						    //consulta
 						    $rs = mysql_query("SELECT id, nome FROM empresa ORDER BY nome");
 						    //chama a função
-						    montaCombo('comboEmpresa', 'combo_empre', $rs, 'id', 'nome');
+						    montaCombo('comboEmpresa', $rs, 'id', 'nome');
 						?>
 					</LABEL>
 
@@ -91,13 +83,13 @@
 					<LABEL> 
 						<SPAN> Data de Saída: </SPAN>
 						<!--  Entrada de dados na forma de data, cria um calendário para selecionar a data !-->
-						<INPUT type="text" class="input_text" name="data_saida" id="data_saida" value='aa-mm-dd'/> 
+						<INPUT type="date" class="input_text" name="data_saida" id="data_saida"/> 
 						<p class="hint"> Marque a data do início da viagem. </p> <!-- Mensagem flutuante que aparece ao colocar o mouse em cima do campo !-->
 					</LABEL>
 				
 					<LABEL> 
 						<SPAN> Data de Retorno: </SPAN> 
-						<INPUT type="text" class="input_text" name="data_chegada" id="data_chegada" value='aa-mm-dd' />
+						<INPUT type="date" class="input_text" name="data_chegada" id="data_chegada"/>
 						<p class="hint"> Lembre-se que a data do fim da viagem tem que ser maior que o início da viagem. </p>
 					</LABEL>
 

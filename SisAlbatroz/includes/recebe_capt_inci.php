@@ -13,7 +13,6 @@
 require_once('../database/conexao.php');
 
 //Definindo as variáveis de conexão com o servidor e BD
-$cruz = $_POST["cruz"];
 $lance = $_POST["lance"];
 $data = $_POST["data"];
 $combo = $_POST["combo"];
@@ -26,14 +25,14 @@ $lon = $_POST["lon"];
 $i=0;
 $elementos = count($lance);
 for ($i=0; $i < $elementos; $i++){
-		$query = "INSERT INTO capt_incidental (cruzeiro, lance, data, especie, etiqueta, boia_radio, quantidade, lat, lon) 
-			VALUES ('$cruz', '$lance[$i]', '$data[$i]', '$combo[$i]', '$etiqueta[$i]', '$boia[$i]', '$quant[$i]', '$lat[$i]', '$lon[$i]')";
+		$query = "INSERT INTO capt_incidental (lance, data, especie, etiqueta, boia_radio, quantidade, lat, lon) 
+			VALUES ('$lance[$i]', '$data[$i]', '$combo[$i]', '$etiqueta[$i]', '$boia[$i]', '$quant[$i]', '$lat[$i]', '$lon[$i]')";
 		$result = mysql_query($query, $link);
 	}
 
-//var_dump($query);
-//var_dump(mysql_error());
-//exit();
+var_dump($query);
+var_dump(mysql_error());
+exit();
 //fechando a conexão com o banco de dados
 mysql_close($link);
 
