@@ -18,14 +18,14 @@ $reg = $_POST["reg"];
 $fab = $_POST["fab"];
 $comp = $_POST["comp"]; 
 $mat = $_POST["mat"];
-$cap = $_POST["cap"];
+$capac = $_POST["capac"];
 $arq_bruta = $_POST["arq_bruta"];
 $conserv = $_POST["conserv"];
 $tripu = $_POST["tripu"];
 
 // Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
 mysql_query("INSERT INTO embarcacao (nome, registro, fabricacao, comprimento, material, capacidade, arque_bruta, conservacao, tripulacao)
-	VALUES ('$nome', '$reg', '$fab', '$comp', '$mat', '$cap', '$arq_bruta', '$conserv', '$tripu')", $link);
+	VALUES ('$nome', '$reg', '$fab', '$comp', '$mat', '$capac', '$arq_bruta', '$conserv', '$tripu')", $link);
 
 //fechando a conexão com o banco de dados
 mysql_close($link);

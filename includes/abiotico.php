@@ -9,6 +9,7 @@
 
 	require_once('../database/conexao.php');
 	require_once('../functions/funcoes.php'); //importa o arquivo com as funções a serem utilizadas
+	include('select.class.php');
 
 ?>
 
@@ -17,8 +18,11 @@
 	<HEAD> <!-- Cabeçalho que não vai aparecer para o usuário !-->
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Informações sobre o tipo de texto da página !-->
 	<TITLE> Dados Abióticos </TITLE> <!-- Cabeçalho que vai no titulo da aba do navegador !-->
-	
 	<LINK rel="stylesheet" type="text/css" href="../css/form.css" /> <!-- Faz o link com a página de CSS e chama o arquivo !-->
+	<LINK rel="stylesheet" type="text/css" href="../css//custom-theme/jquery-ui-1.10.4.custom.css"></LINK>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src='../js/consulta.js'></script>
+	<script type="text/javascript" src='../js/jquery-ui-1.10.4.custom.min.js'></script>
 
 	</HEAD>
  	<HEADER align="middle">
@@ -30,12 +34,28 @@
  	<BODY>
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
             <FORM id="form" method="post" action="recebe_abiotico.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
-                
                 <H1> Dados Abióticos </H1> <!-- Cabeçalho da caixa principal do formulário !-->
-                <H2>Informações Gerais</H2>
-                
+
+                <DIV class="box4" id='campoPai'>
+                	<h3> Consulta do Código do Cruzeiro </h3>
+                	<LABEL>
+                		<span> Observador: </span>
+                		<select id="obser" name="obser" class="input_text">
+						  <?php echo $opt->ShowCategory(); ?>
+						</select>
+						<span> Embarcação: </span>
+						<select id="barco" name="barco" class="input_text">
+						  <option value="0">--Bloueado--</option>
+						</select>
+						<span> Cruzeiro: </span>
+						<select id="cruz" name="cruz" class="input_text">
+						  <option value="0">--Bloqueado--</option>
+						</select>
+					</LABEL>
+				</DIV>
+
+				<H2> Informações Gerais </H2>
                 <DIV class="esquerda"> <!-- Box da coluna da esquerda !-->
-	                
 					<LABEL> 
 						<SPAN> Lance: </SPAN>
 						<INPUT type="number" class="input_text" name="lance" />
@@ -47,7 +67,7 @@
 						    //consulta
 						    $rs = mysql_query("SELECT id, nome FROM isca ORDER BY nome");
 						    //chama a função
-						    montaCombo('comboIsca', $rs, 'id', 'nome');
+						    montaCombo('comboIsca', 'comboIsca', $rs, 'id', 'nome');
 						?>
 					</LABEL>
 
@@ -55,9 +75,9 @@
 						<SPAN> Espécies alvo: </SPAN>
 						<?php
 						    //consulta
-						    $rs = mysql_query("SELECT id, nome_popular FROM especies ORDER BY nome_popular");
+						    $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
 						    //chama a função
-						    montaCombo('comboEspe', $rs, 'id', 'nome_popular');
+						    montaCombo('comboAlvo', 'comboAlvo', $rs, 'id', 'nome_popular');
 						?>
 					</LABEL>
 					
@@ -108,7 +128,7 @@
 
 					<LABEL> 
 						<SPAN> Data: </SPAN>
-						<INPUT type="date" class="input_text" name="data_in_lan" />
+						<INPUT type="date" class="input_text" name="data_in_lan" id="data_in_lan" />
 					</LABEL>
 
 					<LABEL> 
