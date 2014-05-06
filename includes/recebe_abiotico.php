@@ -79,10 +79,13 @@ $atm_fi_rec = $_POST["atm_fi_rec"];
 
 
 // Função para inserir as variáveis descritas no VALUES, na tabela GERAL, dentro das colunas determinadas
-$query1 = "INSERT INTO abiot_geral 
+/*$query1 = "INSERT INTO abiot_geral 
 			(cruz, lance, isca, alvo, anzol, reg_peso, toriline, isca_tingida, obs) 
 			VALUES 
 			('$cruz', '$lance', '$isca', '$alvo', '$anzol', '$reg_peso','$tingida', '$tori', '$obs')";
+
+$result1 = mysql_query($query1, $link);
+*/
 
 $query2 = "INSERT INTO abiot_lanc 
 			(cruz, lance, lat_in, lat_fi, lon_in, lon_fi, data_in, data_fi, hora_in, hora_fi, prof_in, prof_fi, 
@@ -94,19 +97,18 @@ $query2 = "INSERT INTO abiot_lanc
 				'$mar_in_lan', '$mar_fi_lan', '$tar_in_lan', '$tar_fi_lan', '$tsmar_in_lan', '$tsmar_fi_lan', '$ceu_in_lan', '$ceu_fi_lan', 
 				'$atm_in_lan', '$atm_fi_lan')";
 
-$query3 = "INSERT INTO abi_rec 
-			(cruzeiro, lat_in_rec, lat_fi_rec, lon_in_rec, lon_fi_rec, data_in_rec, data_fi_rec, hora_in_rec, hora_fi_rec, prof_in_rec, prof_fi_rec, 
-				rumo_in_rec, rumo_fin_rec, vento_dir_in_rec, vento_dir_fi_rec, vento_vel_in_rec, vento_vel_fi_rec, mar_in_rec, mar_fi_rec, tar_in_rec, tar_fi_rec, 
-				tsmar_in_rec, tsmar_fi_rec, ceu_in_rec, ceu_fi_rec, atm_in_rec, atm_fi_rec) 
+$result2 = mysql_query($query2, $link);
+
+$query3 = "INSERT INTO abiot_reco 
+			(cruz, lance, lat_in, lat_fi, lon_in, lon_fi, data_in, data_fi, hora_in, hora_fi, prof_in, prof_fi, 
+				rumo_in, rumo_fin, vento_dir_in, vento_dir_fi, vento_vel_in, vento_vel_fi, mar_in, mar_fi, tar_in, tar_fi, 
+				tsmar_in, tsmar_fi, ceu_in, ceu_fi, atm_in, atm_fi) 
 			VALUES 
-			('$cruz', '$lat_in_rec', '$lat_fi_rec', '$lon_in_rec', '$lon_fi_rec', '$data_in_rec', '$data_fi_rec', '$hora_in_rec', '$hora_fi_rec', 
+			('$cruz', '$lance', '$lat_in_rec', '$lat_fi_rec', '$lon_in_rec', '$lon_fi_rec', '$data_in_rec', '$data_fi_rec', '$hora_in_rec', '$hora_fi_rec', 
 				'$prof_in_rec', '$prof_fi_rec', '$rumo_in_rec', '$rumo_fi_rec', '$dvento_in_rec', '$dvento_fi_rec', '$vvento_in_rec', '$vvento_fi_rec', 
 				'$mar_in_rec', '$mar_fi_rec', '$tar_in_rec', '$tar_fi_rec', '$tsmar_in_rec', '$tsmar_fi_rec', '$ceu_in_rec', '$ceu_fi_rec', 
 				'$atm_in_rec', '$atm_fi_rec')";
 
-
-$result1 = mysql_query($query1, $link);
-$result2 = mysql_query($query2, $link);
 $result3 = mysql_query($query3, $link);
 
 //fechando a conexão com o banco de dados

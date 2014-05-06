@@ -30,10 +30,10 @@
 			   <LI><a href="prod_pesca.php">Produção Pesqueira</a></LI>
 			  </UL>
 			 </LI>
-			 <LI><a href="#">Mapas de Bordo</a>
+			 <LI><a href="#">Visita de Cais</a>
 			  <UL>
-			   <LI><a href="#"></a></LI>
-			   <LI><a href="#"></a></LI>
+			   <LI><a href="mapa_bordo.php">Mapas de Bordo</a></LI>
+			   <LI><a href="entrev_cais.php">Entrevista de Cais</a></LI>
 			   <LI><a href="#"></a></LI>
 			   <LI><a href="#"></a></LI>
 			   <LI><a href="#"></a></LI>
