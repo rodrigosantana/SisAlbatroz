@@ -478,6 +478,19 @@ div.box4 .input_text {
     margin-left: 1%;
 }
 
+/*input_text utilizado para checkbox com largura diferenciado por causa das opções*/
+div.box4 .input_text2 {
+    padding: 10px 10px;
+    width: 30%;
+    background: #262626;
+    border-bottom: 1px double #171717;
+    border-top: 1px double #171717;
+    border-left: 1px double #333333;
+    border-right: 1px double #333333;
+    float: left;
+    margin-left: 1%;
+}
+
 /* Botão de SUBMETER do BOX do Formulário */
 div.box4 .add {
 
