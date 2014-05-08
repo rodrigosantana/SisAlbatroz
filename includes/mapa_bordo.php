@@ -34,18 +34,48 @@
 		function addCampos() {
 		var objPai = document.getElementById("campoPai");
 		//Criando o elemento DIV;
-		var objFilho = document.createElement("label");
+		var objFilho = document.createElement("div");
 		//Definindo atributos ao objFilho:
 		objFilho.setAttribute("id","filho"+qtdeCampos);
 		//Inserindo o elemento no pai:
 		objPai.appendChild(objFilho);
 		//Escrevendo algo no filho recém-criado:
 		document.getElementById("filho"+qtdeCampos).innerHTML =
-			"<SPAN> Espécie: </SPAN> <?php $rs = mysql_query("SELECT id, nome_popular FROM especies WHERE categoria = 'peixes' ORDER BY nome_popular");
-			  dinCombo('comboBarco', $rs, 'id', 'nome_popular');?>\
-			<SPAN> Quantidade: </SPAN> <input type='number' class='input_text' id='campo"+qtdeCampos+"' name='cont_esp[]' /> \
-			<SPAN> Predação: </SPAN> <INPUT type='text' class='input_text' id='campo"+qtdeCampos+"' name='preda[]' /> \
-			<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'>";
+			"<LABEL> \
+				<SPAN> Lance: </SPAN> <INPUT type='number' class='input_text' name='lance[]' id='campo"+qtdeCampos+"' /> \
+				<SPAN> Data: </SPAN> <INPUT type='date' class='input_text' name='data_lance[]' id='campo"+qtdeCampos+"' value='aa-mm-dd' /> \
+				<SPAN> Total de anzóis: </SPAN> <INPUT type='number' class='input_text' name='anzol[]' id='campo"+qtdeCampos+"' /> \
+			</LABEL> \
+			<LABEL> \
+				<SPAN> Latitude (decimal): </SPAN> <INPUT type='number' class='input_text' name='lat[]' id='campo"+qtdeCampos+"' /> \
+				<SPAN> Longitude (decimal): </SPAN> <INPUT type='number' class='input_text' name='lon[]' id='campo"+qtdeCampos+"' /> \
+				<SPAN> Tipo de isca: </SPAN> <?php $rs = mysql_query("SELECT id, nome FROM isca ORDER BY nome"); dinCombo('comboIsca', $rs, 'id', 'nome'); ?> \
+			</LABEL> \
+			<LABEL> \
+				<SPAN> Hora início da largada: </SPAN> <INPUT type='time' class='input_text' name='hora_lan[]' id='campo"+qtdeCampos+"' /> \
+				<SPAN> Hora fim da largada: </SPAN> <INPUT type='time' class='input_text' name='hora_rec[]' id='campo"+qtdeCampos+"' /> \
+				<SPAN> Ave capturada: </SPAN> \
+					<FIELDSET class='input_text' id='campo"+qtdeCampos+"' > \
+						<input type='radio' name='ave_capt[]' value='s'> Sim &nbsp</input> \
+						<input type='radio' name='ave_capt[]' value='n'> Não </input> \
+					</FIELDSET> \
+			</LABEL> \
+			<LABEL> \
+				<SPAN> Medida metigadora: </SPAN> \
+				<FIELDSET class='input_text2'> \
+					<input type='checkbox' name='medida_metiga[]' value='toriline' id='campo"+qtdeCampos+"'> Toriline &nbsp</input> \
+					<input type='checkbox' name='medida_metiga[]' value='larga_notu' id='campo"+qtdeCampos+"'> Largada noturna &nbsp</input> \
+					<input type='checkbox' name='medida_metiga[]' value='isca_ting' id='campo"+qtdeCampos+"'> Isca tingida &nbsp</input> \
+					<input type='checkbox' name='medida_metiga[]' value='reg_peso' id='campo"+qtdeCampos+"'> Regime de peso </input> \
+				</FIELDSET> \
+				<SPAN> Uso da medida metigadora: </SPAN> \
+				<FIELDSET class='input_text'> \
+					<input type='radio' name='mm_uso[]' value='total' id='campo"+qtdeCampos+"'> Total &nbsp</input> \
+					<input type='radio' name='mm_uso[]' value='parcial' id='campo"+qtdeCampos+"'> Parcial </input> \
+				</FIELDSET> \
+				<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'> \
+			</LABEL> \
+			<hr/> "; 
 		qtdeCampos++;
 		}
 
@@ -95,16 +125,16 @@
 
 				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL> 
+						<SPAN> Data de Chegada: </SPAN> 
+						<INPUT type="text" class="input_text" name="data_chegada" id="data_chegada" value='aa-mm-dd' />
+						<p class="hint"> Lembre-se que a data do fim da viagem tem que ser maior que o início da viagem. </p>
+					</LABEL>
+
+					<LABEL> 
 						<SPAN> Data de Saída: </SPAN>
 						<!--  Entrada de dados na forma de data, cria um calendário para selecionar a data !-->
 						<INPUT type="text" class="input_text" name="data_saida" id="data_saida" value='aa-mm-dd'/> 
 						<p class="hint"> Marque a data do início da viagem. </p> <!-- Mensagem flutuante que aparece ao colocar o mouse em cima do campo !-->
-					</LABEL>
-				
-					<LABEL> 
-						<SPAN> Data de Chegada: </SPAN> 
-						<INPUT type="text" class="input_text" name="data_chegada" id="data_chegada" value='aa-mm-dd' />
-						<p class="hint"> Lembre-se que a data do fim da viagem tem que ser maior que o início da viagem. </p>
 					</LABEL>
 				</DIV>
 
@@ -119,45 +149,44 @@
 				<H2> Dados do Lançamento </H2>
 				<DIV class="box4" id="campoPai">
 					<LABEL> 
+						<SPAN> Lance: </SPAN>
+						<INPUT type="number" class="input_text" name="lance[]" />
+
 						<SPAN> Data: </SPAN>
 						<!--  Entrada de dados na forma de data, cria um calendário para selecionar a data !-->
-						<INPUT type="text" class="input_text" name="data_lance" id="data" value='aa-mm-dd'/> 
-						<p class="hint"> Marque a data do início da viagem. </p> <!-- Mensagem flutuante que aparece ao colocar o mouse em cima do campo !-->
-
-						<SPAN> Lance: </SPAN>
-						<INPUT type="number" class="input_text" name="lance" />
+						<INPUT type="text" class="input_text" name="data_lance[]" id="data" value='aa-mm-dd'/> 
 
 						<SPAN> Total de anzóis: </SPAN>
-						<INPUT type="number" class="input_text" name="anzol" />
+						<INPUT type="number" class="input_text" name="anzol[]" />
 					</LABEL>
 
 					<LABEL>
 						<SPAN> Latitude (decimal): </SPAN>
-						<INPUT type="number" class="input_text" name="lat" />
+						<INPUT type="number" class="input_text" name="lat[]" />
 
 						<SPAN> Longitude (decimal): </SPAN>
-						<INPUT type="number" class="input_text" name="lon" />
+						<INPUT type="number" class="input_text" name="lon[]" />
 
 						<SPAN> Tipo de isca: </SPAN>
 						<?php
 						    //consulta
 						    $rs = mysql_query("SELECT id, nome FROM isca ORDER BY nome");
 						    //chama a função
-						    montaCombo('comboIsca', 'comboIsca', $rs, 'id', 'nome');
+						    dinCombo('comboIsca', $rs, 'id', 'nome');
 						?>
 					</LABEL>
 
 					<LABEL> 
 						<SPAN> Hora início da largada: </SPAN>
-						<INPUT type="time" class="input_text" name="hora_lan" />
+						<INPUT type="time" class="input_text" name="hora_lan[]" />
 
 						<SPAN> Hora fim da largada: </SPAN>
-						<INPUT type="time" class="input_text" name="hora_rec" />
+						<INPUT type="time" class="input_text" name="hora_rec[]" />
 
 						<SPAN> Ave capturada: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="ave_capt" value="s"> Sim &nbsp</input> 
-							<input type="radio" name="ave_capt" value="n"> Não </input>
+							<input type="radio" name="ave_capt[]" value="s"> Sim &nbsp</input> 
+							<input type="radio" name="ave_capt[]" value="n"> Não </input>
 						</FIELDSET>
 					</LABEL>
 
@@ -170,10 +199,10 @@
 							<input type="checkbox" name="medida_metiga[]" value="reg_peso"> Regime de peso </input>
 						</FIELDSET>
 
-						<SPAN> Uso da MM: </SPAN>
+						<SPAN> Uso da medida metigadora: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="mm_uso" value="total"> Total &nbsp</input> 
-							<input type="radio" name="mm_uso" value="parcial"> Parcial </input>
+							<input type="radio" name="mm_uso[]" value="total"> Total &nbsp</input> 
+							<input type="radio" name="mm_uso[]" value="parcial"> Parcial </input>
 						</FIELDSET>
 						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>

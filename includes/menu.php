@@ -20,7 +20,7 @@
 			   <LI><a href="mestre.php">Mestres</a></LI>
 			  </UL>
 			 </LI>
-			 <LI><a href="#">Embarques</a>
+			 <LI><a href="#">Monitoramento a Bordo</a>
 			  <UL>
 			   <LI><a href="embarque.php">Cadastro de Cruzeiros</a></LI>
 			   <LI><a href="abiotico.php">Dados Abióticos</a></LI>
@@ -30,7 +30,7 @@
 			   <LI><a href="prod_pesca.php">Produção Pesqueira</a></LI>
 			  </UL>
 			 </LI>
-			 <LI><a href="#">Visita de Cais</a>
+			 <LI><a href="#">Monitoramento de Cais</a>
 			  <UL>
 			   <LI><a href="mapa_bordo.php">Mapas de Bordo</a></LI>
 			   <LI><a href="entrev_cais.php">Entrevista de Cais</a></LI>
@@ -50,7 +50,7 @@
 			   <LI><a href="#"></a></LI>
 			  </UL>
 			 </LI>
-			 <LI><a href="#">Consultas</a>
+			 <LI><a href="#">Relatórios</a>
 			  <UL>
 			   <LI><a href="consulta.php">Observadores de bordo</a></LI>
 			   <LI><a href="#">Mapas de bordo</a></LI>
