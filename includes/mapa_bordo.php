@@ -55,23 +55,23 @@
 				<SPAN> Hora início da largada: </SPAN> <INPUT type='time' class='input_text' name='hora_lan[]' id='campo"+qtdeCampos+"' /> \
 				<SPAN> Hora fim da largada: </SPAN> <INPUT type='time' class='input_text' name='hora_rec[]' id='campo"+qtdeCampos+"' /> \
 				<SPAN> Ave capturada: </SPAN> \
-					<FIELDSET class='input_text' id='campo"+qtdeCampos+"' > \
-						<input type='radio' name='ave_capt[]' value='s'> Sim &nbsp</input> \
-						<input type='radio' name='ave_capt[]' value='n'> Não </input> \
+					<FIELDSET class='input_text' > \
+						<input type='radio' name='ave_capt[]"+qtdeCampos+"' value='s'> Sim &nbsp</input> \
+						<input type='radio' name='ave_capt[]"+qtdeCampos+"' value='n'> Não </input> \
 					</FIELDSET> \
 			</LABEL> \
 			<LABEL> \
 				<SPAN> Medida metigadora: </SPAN> \
 				<FIELDSET class='input_text2'> \
-					<input type='checkbox' name='medida_metiga[]' value='toriline' id='campo"+qtdeCampos+"'> Toriline &nbsp</input> \
-					<input type='checkbox' name='medida_metiga[]' value='larga_notu' id='campo"+qtdeCampos+"'> Largada noturna &nbsp</input> \
-					<input type='checkbox' name='medida_metiga[]' value='isca_ting' id='campo"+qtdeCampos+"'> Isca tingida &nbsp</input> \
-					<input type='checkbox' name='medida_metiga[]' value='reg_peso' id='campo"+qtdeCampos+"'> Regime de peso </input> \
+					<input type='checkbox' name='medida_metiga"+qtdeCampos+"[]' value='toriline' id='campo"+qtdeCampos+"'> Toriline &nbsp</input> \
+					<input type='checkbox' name='medida_metiga"+qtdeCampos+"[]' value='larga_notu' id='campo"+qtdeCampos+"'> Largada noturna &nbsp</input> \
+					<input type='checkbox' name='medida_metiga"+qtdeCampos+"[]' value='isca_ting' id='campo"+qtdeCampos+"'> Isca tingida &nbsp</input> \
+					<input type='checkbox' name='medida_metiga"+qtdeCampos+"[]' value='reg_peso' id='campo"+qtdeCampos+"'> Regime de peso </input> \
 				</FIELDSET> \
 				<SPAN> Uso da medida metigadora: </SPAN> \
 				<FIELDSET class='input_text'> \
-					<input type='radio' name='mm_uso[]' value='total' id='campo"+qtdeCampos+"'> Total &nbsp</input> \
-					<input type='radio' name='mm_uso[]' value='parcial' id='campo"+qtdeCampos+"'> Parcial </input> \
+					<input type='radio' name='mm_uso[]"+qtdeCampos+"' value='total' id='campo"+qtdeCampos+"'> Total &nbsp</input> \
+					<input type='radio' name='mm_uso[]"+qtdeCampos+"' value='parcial' id='campo"+qtdeCampos+"'> Parcial </input> \
 				</FIELDSET> \
 				<input type='button' class='remov' onclick='removerCampo("+qtdeCampos+")' value='Apagar'> \
 			</LABEL> \
