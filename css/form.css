@@ -333,7 +333,7 @@ div.box3 H1 {
 }
 
  /*____________________________________________________________________________________________________________________________________________________________________________*/
- /* Config dos forms dinâmicos */
+ /* Config dos forms dinâmicos ou 3 campos por linha*/
 
 div.box4 {
     margin:  2% 5%;
@@ -414,6 +414,20 @@ div.box4 label span {
     position: relative;
     left: 1%;
     margin-left: 3%;
+}
+
+div.box4 label .span2 {
+    display: block;
+    color: #bbbbbb;
+    font-size: 100%;
+    float: left;
+    width: 10%;
+    min-width: 7%;
+    text-align: right;
+    padding: 5px 5px 0 0;
+    position: relative;
+    left: 1%;
+    margin-left: -2%;
 }
 
 /* Configuração da coluna da esquerda do BOX do formulário */

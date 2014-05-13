@@ -234,4 +234,196 @@
 							<input type="radio" name="esp_S_tori" value="n"> Não </input>
 						</FIELDSET>
 					</LABEL>
+				</DIV>
+
+				<DIV class="box4" id="esp_fund">
+					<H2> Espinhel de Fundo </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Número de espinhéis: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_f_qtd" />
+
+						<SPAN> Número de lances por dia: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_f_lances_dia" /> 
+
+						<SPAN> Hora de inicial do lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_ini_lan" /> 
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Hora de final do lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_fin_lan" /> 
+
+						<SPAN> Hora de inicial do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_ini_rec" /> 
+
+						<SPAN> Hora de final do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_ini_rec" /> 
+					</LABEL>
+
+					<LABEL> 
+						<SPAN> Toriline: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="esp_f_tori" value="s"> Sim &nbsp</input> 
+							<input type="radio" name="esp_f_tori" value="n"> Não </input>
+						</FIELDSET>
+					</LABEL>
 				</DIV> 
+
+				<DIV class="box4" id="arrasto">
+					<H2> Arrasto </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Tipo de arrasto: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="arst" value="simples"> Simples &nbsp</input> 
+							<input type="radio" name="arst" value="duplo"> Duplo </input>
+						</FIELDSET>
+
+						<SPAN> Número de arrastos por dia: </SPAN>
+						<INPUT type="number" class="input_text" name="arst_dia" /> 
+
+						<SPAN> Tempo médio dos arrastos: </SPAN>
+						<INPUT type="time" class="input_text" name="arst_tmp_medio" /> 
+					</LABEL>
+				</DIV>
+
+				<DIV class="box4" id="cerco">
+					<H2> Cerco </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Comprimento da rede (m): </SPAN>
+						<INPUT type="number" class="input_text" name="cerco_rede_comp" />
+
+						<SPAN> Altura da rede (m): </SPAN>
+						<INPUT type="number" class="input_text" name="cerco_rede_alt" /> 
+
+						<SPAN> Tempo estimado do cercamento: </SPAN>
+						<INPUT type="time" class="input_text" name="cerco_tmp_cer" /> 
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Tempo estimado do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="cerco_tmp_rec" /> 
+
+						<SPAN> Número de cercos totais: </SPAN>
+						<INPUT type="number" class="input_text" name="cerco_qtd" /> 
+					</LABEL>
+				</DIV> 
+
+				<DIV class="box4" id="emalhe">
+					<H2> Emalhe </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Tipo de rede: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="ema_rede" value="fundo"> Fundo &nbsp</input> 
+							<input type="radio" name="ema_rede" value="boiada"> Boiada </input>
+						</FIELDSET>
+
+						<SPAN> Comprimento do pano (m): </SPAN>
+						<INPUT type="number" class="input_text" name="ema_rede_comp" />
+
+						<SPAN> Altura do pano (m): </SPAN>
+						<INPUT type="number" class="input_text" name="ema_rede_alt" /> 
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Número de panos por lance: </SPAN>
+						<INPUT type="number" class="input_text" name="ema_pano_lance" /> 
+
+						<SPAN> Tempo estimado de lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="ema_tempo_lan" /> 
+
+						<SPAN> Tempo estimado de recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="ema_tempo_rec" /> 
+					</LABEL>
+
+					<LABEL> 
+						<SPAN> Regime de trabalho: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="ema_regime" value="integral"> Integral &nbsp</input> 
+							<input type="radio" name="ema_regime" value="diurno"> Diurno &nbsp </input>
+							<input type="radio" name="ema_regime" value="noturno"> Noturno </input>
+						</FIELDSET>
+					</LABEL>
+				</DIV> 
+
+				<DIV class="box4" id="varaisca">
+					<H2> Vara e Isca Viva </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Dias na isca: </SPAN>
+						<INPUT type="number" class="input_text" name="vara_dia_isca" />
+
+						<SPAN> Dias capeando: </SPAN>
+						<INPUT type="number" class="input_text" name="vara_dia_" /> 
+
+						<SPAN> Número total de lances: </SPAN>
+						<INPUT type="number" class="input_text" name="vara_" />  
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Número de pescadores: </SPAN>
+						<INPUT type="number" class="input_text" name="vara_" />
+
+						<SPAN> Bóia: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="vara_" value="sim"> Sim &nbsp</input> 
+							<input type="radio" name="vara_" value="nao"> Não </input>
+						</FIELDSET>
+					</LABEL>
+				</DIV> 
+
+				<DIV class="box4" id="linha">
+					<H2> Linha de mão </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Número de linhas: </SPAN>
+						<INPUT type="number" class="input_text" name="linha_qtd" />
+
+						<SPAN> Número de anzóis por linha: </SPAN>
+						<INPUT type="number" class="input_text" name="linha_anzol_linha" /> 
+
+						<SPAN> Número de lances por dia: </SPAN>
+						<INPUT type="number" class="input_text" name="linha_lance_dia" />  
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Regime de trabalho: </SPAN>
+						<FIELDSET class="input_text2">
+							<input type="radio" name="linha_regime" value="matutino"> Matutino &nbsp</input> 
+							<input type="radio" name="linha_regime" value="vespertino"> Vespertino &nbsp </input>
+							<input type="radio" name="linha_regime" value="diurno"> Diurno &nbsp</input> 
+							<input type="radio" name="linha_regime" value="noturno"> Noturno &nbsp </input>
+							<input type="radio" name="linha_regime" value="24horas"> 24 horas </input>
+						</FIELDSET>
+
+						<SPAN class="span2"> Hora inicial: </SPAN>
+						<INPUT type="time" class="input_text" name="linha_hora_in" />
+
+						<SPAN class="span2"> Hora final: </SPAN>
+						<INPUT type="time" class="input_text" name="linha_hora_fi" />
+					</LABEL>
+
+					<LABEL>
+						<SPAN> Petrechos utilizados: </SPAN>
+						<FIELDSET class="input_text2">
+							<input type="checkbox" name="linha_pet" value="matutino"> Matutino &nbsp</input> 
+							<input type="checkbox" name="linha_pet" value="vespertino"> Vespertino &nbsp </input>
+							<input type="checkbox" name="linha_pet" value="diurno"> Diurno &nbsp</input> 
+							<input type="checkbox" name="linha_pet" value="noturno"> Noturno &nbsp </input>
+							<input type="checkbox" name="linha_pet" value="24horas"> 24 horas </input>
+						</FIELDSET>
+
+						<SPAN > Outros: </SPAN>
+						<INPUT type="text" class="input_text2" name="linha_pet_outro" />
+					</LABEL>
+				</DIV> 
+
