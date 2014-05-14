@@ -33,7 +33,8 @@ $ave_capt = $_POST["ave_capt"];
 $medida_metiga = $_POST["medida_metiga"];
 $mm_uso = $_POST["mm_uso"];
 
-
+var_dump($_POST);
+exit();
 
 $query = "INSERT INTO
 	mapa_bordo_geral

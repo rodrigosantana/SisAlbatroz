@@ -33,7 +33,8 @@ $ave_capt = $_POST["ave_capt"];
 $medida_metiga = $_POST["medida_metiga"];
 $mm_uso = $_POST["mm_uso"];
 
-
+var_dump($_POST);
+exit();
 
 $query = "INSERT INTO
 	mapa_bordo_geral
@@ -47,7 +48,7 @@ $id_mb = mysql_insert_id();
 
 $i=0;
 $elements = count($lance);
-while ($i < $elementss) {
+while ($i < $elements) {
 	$query = "INSERT INTO 
 		mapa_bordo_lance 
 			(id_mb, lance, data_lance, lat, lon, anzol, isca, hora_lan, hora_rec, ave_capt, mm_uso)
@@ -57,7 +58,7 @@ while ($i < $elementss) {
 	$result = mysql_query($query, $link);
 
 	$y = 0;
-	$elementss2 = count($checkbox);
+	$elements2 = count($checkbox);
 	while ( $y < $elements2) {
 		$query = "INSERT INTO mapa_bordo_mm (id_mb, lance, mm)
 				VALUES ('$id_mb', '$lance[$y]', '$medida_metiga[$y]')";

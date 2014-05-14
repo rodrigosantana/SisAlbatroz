@@ -22,11 +22,7 @@
 	<script type="text/javascript" src='../js/consulta.js'></script>
 	<script type="text/javascript" src='../js/jquery-1.10.2.js'></script>
 	<script type="text/javascript" src='../js/jquery-ui-1.10.4.custom.min.js'></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			//$("#esp_pela").hide();
-		})
-	</script>
+	<script type="text/javascript" src='../js/entrev_cais_pet.js'></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("#data").datepicker({dateFormat: 'yy-mm-dd'});
@@ -425,5 +421,11 @@
 						<SPAN > Outros: </SPAN>
 						<INPUT type="text" class="input_text2" name="linha_pet_outro" />
 					</LABEL>
-				</DIV> 
+				</DIV>
+				<?php include 'botoes.php'; ?>
+            </FORM>
+        </DIV>   
+<BR /><BR /><BR /><BR /><BR /><BR /> 
+	</BODY>
+</HTML> <!-- Finaliza a páginal HTML !-->				
 

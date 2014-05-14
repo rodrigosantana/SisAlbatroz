@@ -125,16 +125,16 @@
 
 				<DIV class="direita"> <!-- Box da coluna central do formulário !-->
 					<LABEL> 
-						<SPAN> Data de Chegada: </SPAN> 
-						<INPUT type="text" class="input_text" name="data_chegada" id="data_chegada" value='aa-mm-dd' />
-						<p class="hint"> Lembre-se que a data do fim da viagem tem que ser maior que o início da viagem. </p>
-					</LABEL>
-
-					<LABEL> 
 						<SPAN> Data de Saída: </SPAN>
 						<!--  Entrada de dados na forma de data, cria um calendário para selecionar a data !-->
 						<INPUT type="text" class="input_text" name="data_saida" id="data_saida" value='aa-mm-dd'/> 
 						<p class="hint"> Marque a data do início da viagem. </p> <!-- Mensagem flutuante que aparece ao colocar o mouse em cima do campo !-->
+					</LABEL>
+
+					<LABEL> 
+						<SPAN> Data de Chegada: </SPAN> 
+						<INPUT type="text" class="input_text" name="data_chegada" id="data_chegada" value='aa-mm-dd' />
+						<p class="hint"> Lembre-se que a data do fim da viagem tem que ser maior que o início da viagem. </p>
 					</LABEL>
 				</DIV>
 
@@ -210,7 +210,8 @@
 				</DIV> 
 
 				<?php include 'botoes.php'; ?>
-            
+            </FORM>
+        </DIV>    
 <BR /><BR /><BR /><BR /><BR /><BR /> 
 	</BODY>
 </HTML> <!-- Finaliza a páginal HTML !-->
