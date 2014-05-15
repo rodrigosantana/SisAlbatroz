@@ -48,7 +48,7 @@ $id_mb = mysql_insert_id();
 
 $i=0;
 $elements = count($lance);
-while ($i < $elements) {
+for ($i=0; $i < $elements; $i++) { 
 	$query = "INSERT INTO 
 		mapa_bordo_lance 
 			(id_mb, lance, data_lance, lat, lon, anzol, isca, hora_lan, hora_rec, ave_capt, mm_uso)
@@ -59,14 +59,11 @@ while ($i < $elements) {
 
 	$y = 0;
 	$elements2 = count($checkbox);
-	while ( $y < $elements2) {
+	for ($y=0; $y < $elements2; $y++) { 
 		$query = "INSERT INTO mapa_bordo_mm (id_mb, lance, mm)
 				VALUES ('$id_mb', '$lance[$y]', '$medida_metiga[$y]')";
 		$result = mysql_query($query, $link);
-
-	$y++;
 	}
-$i++;
 }
 
 /*

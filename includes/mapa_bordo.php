@@ -30,7 +30,7 @@
 		});
 	</script>
 	<script type="text/javascript">
-		var qtdeCampos = 0;
+		var qtdeCampos = 1;
 		function addCampos() {
 		var objPai = document.getElementById("campoPai");
 		//Criando o elemento DIV;
@@ -193,10 +193,10 @@
 					<LABEL>
 						<SPAN> Medida metigadora: </SPAN>
 						<FIELDSET class="input_text2">
-							<input type="checkbox" name="medida_metiga[]" value="toriline"> Toriline &nbsp</input> 
-							<input type="checkbox" name="medida_metiga[]" value="larga_notu"> Largada noturna &nbsp</input>
-							<input type="checkbox" name="medida_metiga[]" value="isca_ting"> Isca tingida &nbsp</input>
-							<input type="checkbox" name="medida_metiga[]" value="reg_peso"> Regime de peso </input>
+							<input type="checkbox" name="medida_metiga0[]" value="toriline"> Toriline &nbsp</input> 
+							<input type="checkbox" name="medida_metiga0[]" value="larga_notu"> Largada noturna &nbsp</input>
+							<input type="checkbox" name="medida_metiga0[]" value="isca_ting"> Isca tingida &nbsp</input>
+							<input type="checkbox" name="medida_metiga0[]" value="reg_peso"> Regime de peso </input>
 						</FIELDSET>
 
 						<SPAN> Uso da medida metigadora: </SPAN>
