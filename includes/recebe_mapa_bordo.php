@@ -33,8 +33,7 @@ $ave_capt = $_POST["ave_capt"];
 $medida_metiga = $_POST["medida_metiga"];
 $mm_uso = $_POST["mm_uso"];
 
-var_dump($_POST);
-exit();
+
 
 $query = "INSERT INTO
 	mapa_bordo_geral
@@ -58,7 +57,7 @@ for ($i=0; $i < $elements; $i++) {
 	$result = mysql_query($query, $link);
 
 	$y = 0;
-	$elements2 = count($checkbox);
+	$elements2 = count($medida_metiga);
 	for ($y=0; $y < $elements2; $y++) { 
 		$query = "INSERT INTO mapa_bordo_mm (id_mb, lance, mm)
 				VALUES ('$id_mb', '$lance[$y]', '$medida_metiga[$y]')";
