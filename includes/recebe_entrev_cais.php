@@ -8,66 +8,74 @@
 		exit();
 	}
 
-
 //Abrindo conexão com o servidor e BD
 require_once('../database/conexao.php');
 
 //print_r($_POST); // retorna as variáveis que foram enviadas através de POST.
 
-
 //Definindo as variáveis de conexão com o servidor e BD
-$embarcacao = $_POST["comboBarco"];
-$mestre = $_POST["comboMestre"]; 
+// Dados gerais
+$respo = $_POST["respo"];
+$data = $_POST["data"]; 
+$empresa = $_POST["comboEmpresa"];
+$estado = $_POST["estado"]; 
+$cidade = $_POST["cidade"];
+$barco = $_POST["comboBarco"];
+$porto_saida = $_POST["porto_saida"];
 $data_saida = $_POST["data_saida"];
-$data_chegada = $_POST["data_chegada"]; 
-$obs = $_POST["obs"];
-$data_lance = $_POST["data_lance"];
-$lance = $_POST["lance"];
-$lat = $_POST["lat"];
-$lon = $_POST["lon"];
-$anzol = $_POST["anzol"];
-$isca = $_POST["combo"];
-$hora_lan = $_POST["hora_lan"];
-$hora_rec = $_POST["hora_rec"];
-$ave_capt = $_POST["ave_capt"];
-$medida_metiga = $_POST["medida_metiga"];
+$hora_saida = $_POST["hora_saida"];
+$data_chegada = $_POST["data_chegada"];
+$hora_chegada = $_POST["hora_chegada"];
+$dias_mar = $_POST["dias_mar"];
+$dias_pesca = $_POST["dias_pesca"];
+$petrecho = $_POST["comboPetrecho"];
+
+//Area de pesca
+$area_pesca = $_POST["area_pesca"];
+$prof_ini = $_POST["prof_ini"];
+$prof_fin = $_POST["prof_fin"];
+
+//Petrechos
+//Espinhel pelágico
+$esp_p_qtd = $_POST["esp_p_qtd"];
+$esp_p_lances_dia = $_POST["esp_p_lances_dia"];
+$esp_p_hora_ini_lan = $_POST["esp_p_hora_ini_lan"];
+$esp_p_hora_fin_lan = $_POST["esp_p_hora_fin_lan"];
+$esp_p_hora_ini_rec = $_POST["esp_p_hora_ini_rec"];
+$esp_p_hora_fin_rec = $_POST["esp_p_hora_fin_rec"];
+$esp_p_tori = $_POST["esp_p_tori"];
+$esp_p_listk = $_POST["esp_p_listk"];
+
+//Espinhel de superfície
+$esp_s_qtd = $_POST["esp_s_qtd"];
+$esp_s_lances_dia = $_POST["esp_s_lances_dia"];
+$esp_s_hora_ini_lan = $_POST["esp_s_hora_ini_lan"];
+$esp_s_hora_fin_lan = $_POST["esp_s_hora_fin_lan"];
+$esp_s_hora_ini_rec = $_POST["esp_s_hora_ini_rec"];
+$esp_s_hora_fin_rec = $_POST["esp_s_hora_fin_rec"];
+$esp_s_tori = $_POST["esp_s_tori"];
+
+//Espinhel de fundo
+
+
+
 $mm_uso = $_POST["mm_uso"];
+$mm_uso = $_POST["mm_uso"];
+$mm_uso = $_POST["mm_uso"];
+
+
 
 var_dump($_POST);
 exit();
 
 $query = "INSERT INTO
-	mapa_bordo_geral
+	entrevista_geral
 		(embarcacao, mestre, data_saida, data_chegada, obs)
 	VALUES
 		('$embarcacao', '$mestre', '$data_saida', '$data_chegada', '$obs')";
 $result = mysql_query($query, $link);
 $id_mb = mysql_insert_id();
 //var_dump($id_mb);
-
-
-$i=0;
-$elements = count($lance);
-while ($i < $elementss) {
-	$query = "INSERT INTO 
-		mapa_bordo_lance 
-			(id_mb, lance, data_lance, lat, lon, anzol, isca, hora_lan, hora_rec, ave_capt, mm_uso)
-		VALUES 
-			('$id_mb', '$lance[$i]', '$data_lance[$i]', '$lat[$i]', '$lon[$i]', '$anzol[$i]', '$isca[$i]', '$hora_lan[$i]', '$hora_rec[$i]',
-			'$ave_capt[$i]', '$mm_uso[$i]')";
-	$result = mysql_query($query, $link);
-
-	$y = 0;
-	$elementss2 = count($checkbox);
-	while ( $y < $elements2) {
-		$query = "INSERT INTO mapa_bordo_mm (id_mb, lance, mm)
-				VALUES ('$id_mb', '$lance[$y]', '$medida_metiga[$y]')";
-		$result = mysql_query($query, $link);
-
-	$y++;
-	}
-$i++;
-}
 
 
 mysql_close($link);

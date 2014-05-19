@@ -148,10 +148,10 @@
 						<INPUT type="text" class="input_text" name="area_pesca[]" />
 
 						<SPAN> Profundidade inicial: </SPAN>
-						<INPUT type="number" class="input_text" name="pro_ini[]" id="pro_ini" /> 
+						<INPUT type="number" class="input_text" name="prof_ini[]" id="prof_ini" /> 
 
 						<SPAN> Profundidade final: </SPAN>
-						<INPUT type="number" class="input_text" name="pro_fin[]" id="pro_fin" />
+						<INPUT type="number" class="input_text" name="prof_fin[]" id="prof_fin" />
 						<input type="button" class="add" value="Adicionar" onclick="addCampos()">
 					</LABEL>
 				</DIV> 
@@ -179,7 +179,7 @@
 						<INPUT type="time" class="input_text" name="esp_p_hora_ini_rec" /> 
 
 						<SPAN> Hora de final do recolhimento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_p_hora_ini_rec" /> 
+						<INPUT type="time" class="input_text" name="esp_p_hora_fin_rec" /> 
 					</LABEL>
 
 					<LABEL> 
@@ -220,7 +220,7 @@
 						<INPUT type="time" class="input_text" name="esp_s_hora_ini_rec" /> 
 
 						<SPAN> Hora de final do recolhimento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_s_hora_ini_rec" /> 
+						<INPUT type="time" class="input_text" name="esp_s_hora_fin_rec" /> 
 					</LABEL>
 
 					<LABEL> 
