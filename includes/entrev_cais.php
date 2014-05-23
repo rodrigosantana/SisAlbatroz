@@ -67,7 +67,7 @@
 
 	<BODY>
         <DIV class="box"> <!-- Define o BOX principal com o formulário!-->
-            <FORM id="form" method="post" action="recebe_mapa_bordo.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
+            <FORM id="form" method="post" action="recebe_entrev_cais.php"> <!-- Tipo de formulário e como as informações vão ser enviadas !-->
                 <H1> ENTREVISTA DE CAIS </H1> <!-- Cabeçalho da caixa principal do formulário !-->
                 <br>
 
@@ -274,8 +274,8 @@
 					<LABEL> 
 						<SPAN> Tipo de arrasto: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="arst" value="simples"> Simples &nbsp</input> 
-							<input type="radio" name="arst" value="duplo"> Duplo </input>
+							<input type="radio" name="arst_tipo" value="simples"> Simples &nbsp</input> 
+							<input type="radio" name="arst_tipo" value="duplo"> Duplo </input>
 						</FIELDSET>
 
 						<SPAN> Número de arrastos por dia: </SPAN>
@@ -317,8 +317,8 @@
 					<LABEL> 
 						<SPAN> Tipo de rede: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="ema_rede" value="fundo"> Fundo &nbsp</input> 
-							<input type="radio" name="ema_rede" value="boiada"> Boiada </input>
+							<input type="radio" name="ema_tipo" value="fundo"> Fundo &nbsp</input> 
+							<input type="radio" name="ema_tipo" value="boiada"> Boiada </input>
 						</FIELDSET>
 
 						<SPAN> Comprimento do pano (m): </SPAN>
@@ -358,20 +358,20 @@
 						<INPUT type="number" class="input_text" name="vara_dia_isca" />
 
 						<SPAN> Dias capeando: </SPAN>
-						<INPUT type="number" class="input_text" name="vara_dia_" /> 
+						<INPUT type="number" class="input_text" name="vara_dia_cape" /> 
 
 						<SPAN> Número total de lances: </SPAN>
-						<INPUT type="number" class="input_text" name="vara_" />  
+						<INPUT type="number" class="input_text" name="vara_total_lance" />  
 					</LABEL>
 
 					<LABEL>
 						<SPAN> Número de pescadores: </SPAN>
-						<INPUT type="number" class="input_text" name="vara_" />
+						<INPUT type="number" class="input_text" name="vara_qtd_pessoas" />
 
 						<SPAN> Bóia: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="vara_" value="sim"> Sim &nbsp</input> 
-							<input type="radio" name="vara_" value="nao"> Não </input>
+							<input type="radio" name="vara_boia" value="sim"> Sim &nbsp</input> 
+							<input type="radio" name="vara_boia" value="nao"> Não </input>
 						</FIELDSET>
 					</LABEL>
 				</DIV> 
@@ -419,7 +419,7 @@
 						</FIELDSET>
 
 						<SPAN > Outros: </SPAN>
-						<INPUT type="text" class="input_text2" name="linha_pet_outro" />
+						<INPUT type="text" class="input_text2" name="linha_pet_outros" />
 					</LABEL>
 				</DIV>
 				<?php include 'botoes.php'; ?>
