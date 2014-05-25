@@ -167,22 +167,25 @@
 						<SPAN> Número de lances por dia: </SPAN>
 						<INPUT type="number" class="input_text" name="esp_p_lances_dia" /> 
 
-						<SPAN> Hora de inicial do lançamento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_p_hora_ini_lan" /> 
+						<SPAN> Número de anzóis por espinhel: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_p_anzois" /> 
 					</LABEL>
 
 					<LABEL>
+						<SPAN> Hora de inicial do lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_p_hora_ini_lan" /> 
+
 						<SPAN> Hora de final do lançamento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_p_hora_fin_lan" /> 
 
 						<SPAN> Hora de inicial do recolhimento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_p_hora_ini_rec" /> 
-
-						<SPAN> Hora de final do recolhimento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_p_hora_fin_rec" /> 
 					</LABEL>
 
 					<LABEL> 
+						<SPAN> Hora de final do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_p_hora_fin_rec" /> 
+
 						<SPAN> Toriline: </SPAN>
 						<FIELDSET class="input_text">
 							<input type="radio" name="esp_p_tori" value="s"> Sim &nbsp</input> 
@@ -206,28 +209,31 @@
 						<INPUT type="number" class="input_text" name="esp_s_qtd" />
 
 						<SPAN> Número de lances por dia: </SPAN>
-						<INPUT type="number" class="input_text" name="esp_s_lances_dia" /> 
+						<INPUT type="number" class="input_text" name="esp_s_lances_dia" />
 
-						<SPAN> Hora de inicial do lançamento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_s_hora_ini_lan" /> 
+						<SPAN> Número de anzóis por espinhel: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_s_anzois" /> 
 					</LABEL>
 
 					<LABEL>
+						<SPAN> Hora de inicial do lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_s_hora_ini_lan" /> 
+
 						<SPAN> Hora de final do lançamento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_s_hora_fin_lan" /> 
 
 						<SPAN> Hora de inicial do recolhimento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_s_hora_ini_rec" /> 
-
-						<SPAN> Hora de final do recolhimento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_s_hora_fin_rec" /> 
 					</LABEL>
 
-					<LABEL> 
+					<LABEL>
+						<SPAN> Hora de final do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_s_hora_fin_rec" /> 
+
 						<SPAN> Toriline: </SPAN>
 						<FIELDSET class="input_text">
-							<input type="radio" name="esp_S_tori" value="s"> Sim &nbsp</input> 
-							<input type="radio" name="esp_S_tori" value="n"> Não </input>
+							<input type="radio" name="esp_s_tori" value="s"> Sim &nbsp</input> 
+							<input type="radio" name="esp_s_tori" value="n"> Não </input>
 						</FIELDSET>
 					</LABEL>
 				</DIV>
@@ -241,29 +247,37 @@
 						<INPUT type="number" class="input_text" name="esp_f_qtd" />
 
 						<SPAN> Número de lances por dia: </SPAN>
-						<INPUT type="number" class="input_text" name="esp_f_lances_dia" /> 
+						<INPUT type="number" class="input_text" name="esp_f_lances_dia" />
 
-						<SPAN> Hora de inicial do lançamento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_f_hora_ini_lan" /> 
+						<SPAN> Número de anzóis por espinhel: </SPAN>
+						<INPUT type="number" class="input_text" name="esp_f_anzois" /> 
 					</LABEL>
 
 					<LABEL>
+						<SPAN> Hora de inicial do lançamento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_ini_lan" /> 
+
 						<SPAN> Hora de final do lançamento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_f_hora_fin_lan" /> 
 
 						<SPAN> Hora de inicial do recolhimento: </SPAN>
 						<INPUT type="time" class="input_text" name="esp_f_hora_ini_rec" /> 
-
-						<SPAN> Hora de final do recolhimento: </SPAN>
-						<INPUT type="time" class="input_text" name="esp_f_hora_ini_rec" /> 
 					</LABEL>
 
-					<LABEL> 
+					<LABEL>
+						<SPAN> Hora de final do recolhimento: </SPAN>
+						<INPUT type="time" class="input_text" name="esp_f_hora_fin_rec" /> 
+
 						<SPAN> Toriline: </SPAN>
 						<FIELDSET class="input_text">
 							<input type="radio" name="esp_f_tori" value="s"> Sim &nbsp</input> 
 							<input type="radio" name="esp_f_tori" value="n"> Não </input>
 						</FIELDSET>
+
+						<SPAN> Light-stick: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="esp_f_listk" value="s"> Sim &nbsp</input> 
+							<input type="radio" name="esp_f_listk" value="n"> Não </input>
 					</LABEL>
 				</DIV> 
 
@@ -411,11 +425,10 @@
 					<LABEL>
 						<SPAN> Petrechos utilizados: </SPAN>
 						<FIELDSET class="input_text2">
-							<input type="checkbox" name="linha_pet" value="matutino"> Matutino &nbsp</input> 
-							<input type="checkbox" name="linha_pet" value="vespertino"> Vespertino &nbsp </input>
-							<input type="checkbox" name="linha_pet" value="diurno"> Diurno &nbsp</input> 
-							<input type="checkbox" name="linha_pet" value="noturno"> Noturno &nbsp </input>
-							<input type="checkbox" name="linha_pet" value="24horas"> 24 horas </input>
+							<input type="radio" name="linha_pet" value="espinhel"> Espinhel &nbsp</input> 
+							<input type="radio" name="linha_pet" value="linha_mao"> Linha de mão &nbsp </input>
+							<input type="radio" name="linha_pet" value="pargueira"> Pargueira &nbsp</input> 
+							<input type="radio" name="linha_pet" value="outros"> Outros &nbsp </input>
 						</FIELDSET>
 
 						<SPAN > Outros: </SPAN>

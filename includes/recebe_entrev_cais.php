@@ -66,83 +66,150 @@ switch ($petrecho) {
 			VALUES
 				('$id_entre', '$arst_tipo', '$arst_dia', '$arst_tmp_medio')";
 		$result = mysql_query($query, $link);
+		break;
+	
+	case '2':
+		//Espinhel de superfície
+		$esp_s_qtd = $_POST["esp_s_qtd"];
+		$esp_s_lances_dia = $_POST["esp_s_lances_dia"];
+		$esp_s_anzois = $_POST["esp_s_anzois"];
+		$esp_s_hora_ini_lan = $_POST["esp_s_hora_ini_lan"];
+		$esp_s_hora_fin_lan = $_POST["esp_s_hora_fin_lan"];
+		$esp_s_hora_ini_rec = $_POST["esp_s_hora_ini_rec"];
+		$esp_s_hora_fin_rec = $_POST["esp_s_hora_fin_rec"];
+		$esp_s_tori = $_POST["esp_s_tori"];
 
+		$query = "INSERT INTO 
+			entrevista_espi_super
+				(id_entre, espinhel_qtd, espinhel_anzois, lances_dia, lanc_hora_ini, lanc_hora_fin, reco_hora_ini, reco_hora_fin, toriline)
+			VALUES
+				('$id_entre', '$esp_s_qtd', '$esp_s_anzois', '$esp_s_lances_dia', '$esp_s_hora_ini_lan', '$esp_s_hora_fin_lan', 
+					'$esp_s_hora_ini_rec', '$esp_s_hora_fin_rec', '$esp_s_tori')";
+			$result = mysql_query($query, $link);
+		break;
+
+	case '3':
+			//Espinhel pelágico
+			$esp_p_qtd = $_POST["esp_p_qtd"];
+			$esp_p_lances_dia = $_POST["esp_p_lances_dia"];
+			$esp_p_anzois = $_POST["esp_p_anzois"];
+			$esp_p_hora_ini_lan = $_POST["esp_p_hora_ini_lan"];
+			$esp_p_hora_fin_lan = $_POST["esp_p_hora_fin_lan"];
+			$esp_p_hora_ini_rec = $_POST["esp_p_hora_ini_rec"];
+			$esp_p_hora_fin_rec = $_POST["esp_p_hora_fin_rec"];
+			$esp_p_tori = $_POST["esp_p_tori"];
+			$esp_p_listk = $_POST["esp_p_listk"];
+
+			$query = "INSERT INTO 
+			entrevista_espi_pelag
+				(id_entre, espinhel_qtd, espinhel_anzois, lances_dia, lanc_hora_ini, lanc_hora_fin, reco_hora_ini, reco_hora_fin, 
+					toriline, light_stick)
+			VALUES
+				('$id_entre', '$esp_p_qtd', '$esp_p_anzois', '$esp_p_lances_dia', '$esp_p_hora_ini_lan', '$esp_p_hora_fin_lan', 
+					'$esp_p_hora_ini_rec', '$esp_p_hora_fin_rec', '$esp_p_tori', '$esp_p_listk')";
+			$result = mysql_query($query, $link);
+		break;
+
+	case '4':
+		//Espinhel de fundo
+		$esp_f_qtd = $_POST["esp_f_qtd"];
+		$esp_f_lances_dia = $_POST["esp_f_lances_dia"];
+		$esp_f_anzois = $_POST["esp_f_anzois"];
+		$esp_f_hora_ini_lan = $_POST["esp_f_hora_ini_lan"];
+		$esp_f_hora_fin_lan = $_POST["esp_f_hora_fin_lan"];
+		$esp_f_hora_ini_rec = $_POST["esp_f_hora_ini_rec"];
+		$esp_f_hora_fin_rec = $_POST["esp_f_hora_fin_rec"];
+		$esp_f_tori = $_POST["esp_f_tori"];
+		$esp_f_listk = $_POST["esp_f_listk"];
+
+		$query = "INSERT INTO
+			entrevista_espi_fundo 
+				(id_entre, espinhel_qtd, espinhel_anzois, lances_dia, lanc_hora_ini, lanc_hora_fin, reco_hora_ini, reco_hora_fin, 
+					toriline, light_stick)
+			VALUES
+				('$id_entre', '$esp_f_qtd', '$esp_f_anzois', '$esp_f_lances_dia', '$esp_f_hora_ini_lan', '$esp_f_hora_fin_lan', 
+					'$esp_f_hora_ini_rec', '$esp_f_hora_fin_rec', '$esp_f_tori', '$esp_f_listk')";
+			$result = mysql_query($query, $link);
+		break;
+
+	case '5':
+		//Vara e isca viva
+		$vara_dia_isca = $_POST["vara_dia_isca"];
+		$vara_dia_cape = $_POST["vara_dia_cape"];
+		$vara_total_lance = $_POST["vara_total_lance"];
+		$vara_qtd_pessoas = $_POST["vara_qtd_pessoas"];
+		$vara_boia = $_POST["vara_boia"];
+
+		$query = "INSERT INTO
+			entrevista_vara_isca_viva
+				(id_entre, dias_isca, dias_capeando, lances_qtd, pescadores_qtd, boia)
+			VALUES
+				('$id_entre', '$vara_dia_isca', '$vara_dia_cape', '$vara_total_lance', '$vara_qtd_pessoas', '$vara_boia')";
+		$result = mysql_query($query, $link);	
+		break;
+
+	case '6':
+		//Emalhe
+		$ema_tipo = $_POST["ema_tipo"];
+		$ema_rede_comp = $_POST["ema_rede_comp"];
+		$ema_rede_alt = $_POST["ema_rede_alt"];
+		$ema_pano_lance = $_POST["ema_pano_lance"];
+		$ema_tempo_lan = $_POST["ema_tempo_lan"];
+		$ema_tempo_rec = $_POST["ema_tempo_rec"];
+		$ema_regime = $_POST["ema_regime"];
+
+		$query = "INSERT INTO
+			entrevista_emalhe
+				(id_entre, rede_tipo, pano_comp, pano_altura, pano_qtd_lance, regime_trab, tempo_lanca, tempo_recolh)
+			VALUES
+				('$id_entre', '$ema_tipo', '$ema_rede_comp', '$ema_rede_alt', '$ema_pano_lance', '$ema_regime', '$ema_tempo_lan',
+					'$ema_tempo_rec')";
+		$result = mysql_query($query, $link);
+		break;
+
+	case '7': //Não está enviando para o banco
+		//Linha de mão
+		$linha_qtd = $_POST["linha_qtd"];
+		$linha_anzol_linha = $_POST["linha_anzol_linha"];
+		$linha_lance_dia = $_POST["linha_lance_dia"];
+		$linha_regime = $_POST["linha_regime"];
+		$linha_hora_in = $_POST["linha_hora_in"];
+		$linha_hora_fi = $_POST["linha_hora_fi"];
+		$linha_pet = $_POST["linha_pet"];
+		$linha_pet_outros = $_POST["linha_pet_outros"];	
+		
+		$query = "INSERT INTO
+			entrevista_linha_mao
+				(id_entre, linha_qtd, linha_anzois, lances_dia, regime_trab, hora_ini, hora_fin, petrecho, outros)
+			VALUES
+				('$id_entre', '$linha_qtd', '$linha_anzol_linha', '$linha_lance_dia', '$linha_regime', '$linha_hora_in',
+					$linha_hora_fi, '$linha_pet', '$linha_pet_outros')";
+		$result = mysql_query($query, $link);
+		var_dump($query);
+		break;
+
+	case '8':
+		//Cerco
+		$cerco_rede_comp = $_POST["cerco_rede_comp"];
+		$cerco_rede_alt = $_POST["cerco_rede_alt"];
+		$cerco_tmp_cer = $_POST["cerco_tmp_cer"];
+		$cerco_tmp_rec = $_POST["cerco_tmp_rec"];
+		$cerco_qtd = $_POST["cerco_qtd"];
+
+		$query = "INSERT INTO
+			entrevista_cerco
+				(id_entre, rede_comp, rede_altura, cerco_qtd, tempo_cerc, tempo_reco)
+			VALUES
+				('$id_entre', '$cerco_rede_comp', '$cerco_rede_alt', '$cerco_qtd', '$cerco_tmp_cer', '$cerco_tmp_rec')";
+		$result = mysql_query($query, $link);
 		break;
 
 	default:
-		echo "Default";
+		echo "Nenhum petrecho de pesca foi selecionado";
 		break;
 }	
 
-//continuar adicionar Switch Case para cada tipo de petrecho de acordo com a seleção.
-
 exit;
-//Petrechos
-//Espinhel pelágico
-$esp_p_qtd = $_POST["esp_p_qtd"];
-$esp_p_lances_dia = $_POST["esp_p_lances_dia"];
-$esp_p_hora_ini_lan = $_POST["esp_p_hora_ini_lan"];
-$esp_p_hora_fin_lan = $_POST["esp_p_hora_fin_lan"];
-$esp_p_hora_ini_rec = $_POST["esp_p_hora_ini_rec"];
-$esp_p_hora_fin_rec = $_POST["esp_p_hora_fin_rec"];
-$esp_p_tori = $_POST["esp_p_tori"];
-$esp_p_listk = $_POST["esp_p_listk"];
-
-//Espinhel de superfície
-$esp_s_qtd = $_POST["esp_s_qtd"];
-$esp_s_lances_dia = $_POST["esp_s_lances_dia"];
-$esp_s_hora_ini_lan = $_POST["esp_s_hora_ini_lan"];
-$esp_s_hora_fin_lan = $_POST["esp_s_hora_fin_lan"];
-$esp_s_hora_ini_rec = $_POST["esp_s_hora_ini_rec"];
-$esp_s_hora_fin_rec = $_POST["esp_s_hora_fin_rec"];
-$esp_s_tori = $_POST["esp_s_tori"];
-
-//Espinhel de fundo
-$esp_f_qtd = $_POST["esp_f_qtd"];
-$esp_f_lances_dia = $_POST["esp_f_lances_dia"];
-$esp_f_hora_ini_lan = $_POST["esp_f_hora_ini_lan"];
-$esp_f_hora_fin_lan = $_POST["esp_f_hora_fin_lan"];
-$esp_f_hora_ini_rec = $_POST["esp_f_hora_ini_rec"];
-$esp_f_hora_ini_rec = $_POST["esp_f_hora_ini_rec"];
-$esp_f_tori = $_POST["esp_f_tori"];
-
-
-
-//Cerco
-$cerco_rede_comp = $_POST["cerco_rede_comp"];
-$cerco_rede_alt = $_POST["cerco_rede_alt"];
-$cerco_tmp_cer = $_POST["cerco_tmp_cer"];
-$cerco_tmp_rec = $_POST["cerco_tmp_rec"];
-$cerco_qtd = $_POST["cerco_qtd"];
-
-//Emalhe
-$ema_tipo = $_POST["ema_tipo"];
-$ema_rede_comp = $_POST["ema_rede_comp"];
-$ema_rede_alt = $_POST["ema_rede_alt"];
-$ema_pano_lance = $_POST["ema_pano_lance"];
-$ema_tempo_lan = $_POST["ema_tempo_lan"];
-$ema_tempo_rec = $_POST["ema_tempo_rec"];
-$ema_regime = $_POST["ema_regime"];
-
-//Vara e isca viva
-$vara_dia_isca = $_POST["vara_dia_isca"];
-$vara_dia_cape = $_POST["vara_dia_cape"];
-$vara_total_lance = $_POST["vara_total_lance"];
-$vara_qtd_pessoas = $_POST["vara_qtd_pessoas"];
-$vara_boia = $_POST["vara_boia"];
-
-//Linha de mão
-$linha_qtd = $_POST["linha_qtd"];
-$linha_anzol_linha = $_POST["linha_anzol_linha"];
-$linha_lance_dia = $_POST["linha_lance_dia"];
-$linha_regime = $_POST["linha_regime"];
-$linha_hora_in = $_POST["linha_hora_in"];
-$linha_hora_fi = $_POST["linha_hora_fi"];
-$linha_pet = $_POST["linha_pet"];
-$linha_pet_outros = $_POST["linha_pet_outros"];
-
-
-
 
 mysql_close($link);
 
