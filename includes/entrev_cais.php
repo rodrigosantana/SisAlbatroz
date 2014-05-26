@@ -425,14 +425,43 @@
 					<LABEL>
 						<SPAN> Petrechos utilizados: </SPAN>
 						<FIELDSET class="input_text2">
-							<input type="radio" name="linha_pet" value="espinhel"> Espinhel &nbsp</input> 
-							<input type="radio" name="linha_pet" value="linha_mao"> Linha de mão &nbsp </input>
-							<input type="radio" name="linha_pet" value="pargueira"> Pargueira &nbsp</input> 
-							<input type="radio" name="linha_pet" value="outros"> Outros &nbsp </input>
+							<input type="checkbox" name="linha_pet[]" value="espinhel"> Espinhel &nbsp</input> 
+							<input type="checkbox" name="linha_pet[]" value="linha_mao"> Linha de mão &nbsp </input>
+							<input type="checkbox" name="linha_pet[]" value="pargueira"> Pargueira &nbsp</input> 
+							<input type="checkbox" name="linha_pet[]" value="outros"> Outros </input>
 						</FIELDSET>
 
 						<SPAN > Outros: </SPAN>
 						<INPUT type="text" class="input_text2" name="linha_pet_outros" />
+					</LABEL>
+				</DIV>
+
+				<DIV class="box4" id="capt_aves">
+					<H2> Observação de Aves Marinhas </H2>
+					<br/>
+					<br/>
+					<LABEL> 
+						<SPAN> Aves observadas: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="aves_obser" value="sim"> Sim &nbsp</input> 
+							<input type="radio" name="aves_obser" value="nao"> Não </input>
+						</FIELDSET>
+
+						<SPAN> Aves capturadas: </SPAN>
+						<FIELDSET class="input_text">
+							<input type="radio" name="aves_capt" value="sim"> Sim &nbsp</input> 
+							<input type="radio" name="aves_capt" value="nao"> Não </input>
+						</FIELDSET>
+					</LABEL>
+					<LABEL> 
+						<SPAN> Nome popular: </SPAN>
+						<INPUT type="text" class="input_text" name="aves_nome_popular" />
+
+						<SPAN> Nome científico: </SPAN>
+						<INPUT type="text" class="input_text" name="aves_nome_cient" />
+
+						<SPAN> Quantidade: </SPAN>
+						<INPUT type="number" class="input_text" name="aves_quant" />
 					</LABEL>
 				</DIV>
 				<?php include 'botoes.php'; ?>

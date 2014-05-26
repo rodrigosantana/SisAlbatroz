@@ -176,16 +176,18 @@ switch ($petrecho) {
 		$linha_hora_in = $_POST["linha_hora_in"];
 		$linha_hora_fi = $_POST["linha_hora_fi"];
 		$linha_pet = $_POST["linha_pet"];
-		$linha_pet_outros = $_POST["linha_pet_outros"];	
-		
-		$query = "INSERT INTO
-			entrevista_linha_mao
+		$linha_pet_outros = $_POST["linha_pet_outros"];
+
+		$i=0;
+		$elementos = count($linha_pet);
+		for ($i=0; $i < $elementos; $i++){
+			$query = "INSERT INTO entrevista_linha_mao 
 				(id_entre, linha_qtd, linha_anzois, lances_dia, regime_trab, hora_ini, hora_fin, petrecho, outros)
-			VALUES
-				('$id_entre', '$linha_qtd', '$linha_anzol_linha', '$linha_lance_dia', '$linha_regime', '$linha_hora_in',
-					$linha_hora_fi, '$linha_pet', '$linha_pet_outros')";
-		$result = mysql_query($query, $link);
-		var_dump($query);
+				VALUES
+					('$id_entre', '$linha_qtd', '$linha_anzol_linha', '$linha_lance_dia', '$linha_regime', '$linha_hora_in', 
+						'$linha_hora_fi', '$linha_pet[$i]', '$linha_pet_outros')"; 
+			$result = mysql_query($query, $link);
+		}	
 		break;
 
 	case '8':
@@ -209,10 +211,8 @@ switch ($petrecho) {
 		break;
 }	
 
-exit;
 
 mysql_close($link);
-
 header("location:entrev_cais.php");
 
 ?>
